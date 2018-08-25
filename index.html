@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Бухгалтерия</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.css">
+    <link href="./styles/index.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.js"></script>
+    <script src="./js/page.js"></script>
+
+    <meta charset="utf-8">
+</head>
+<body>
+    <div class="demo"></div>
+<div class="container content">
+    <div class="row wrap">
+        <div class="positionA" style="text-align:center">
+            <img class="thanks" alt="" src='./images/thanks.png'>
+            <form class="form" name="frm">
+                <label for="txt1" class="label txt1">Ваша история</label>
+                <textarea onkeypress="cleanError()"
+                id="txt1"
+                class="form-control txt" 
+                name="txt" id="" 
+                cols="100" rows="3" 
+                placeholder="Смелее" 
+                required></textarea>
+                <p id="foto-txt">Добавить фотографию</p>
+
+                <label id="span-plus" for="file">+</label>
+                <input type="file" id="file" name="file" onchange="getFoto()" accept=".jpg"/>
+
+                <div id="div-txt">Ограничения: Тип jpg и Размер не более 5 МБ</div>
+                <label for="name1" class="label name1">Имя Фамилия</label>
+                <input onkeypress="cleanError()" required id="name1" class="form-control name" type="text" placeholder="Укажите свою Фамилию и Имя">
+                <label for="email1" class="label email1">Эл. почта</label>
+                <input onkeypress="cleanError()" required id="email1" class="form-control email" type="text" placeholder="name@example.com">
+                <div id ="error" class="invalid-feedback">Не все  поля заполнены.</div>
+            </form>
+            <div class="div-sub">
+                <button class="btn btn-submit" onclick="validForm()"></button>
+            </div>
+        </div>
+        <div class="media">
+            <a class="btn-vk" target="_blank" href="https://vk.com/"></a>
+            <a class="btn-fb" target="_blank" href="https://www.facebook.com/"></a>
+            <a class="btn-ok" target="_blank" href="https://ok.ru/"></a>
+            <a class="btn-wp" target="_blank" href="https://web.whatsapp.com/"></a>
+        </div>
+        <label id="btn-photo"for="file"></label>
+        <a class="btn-sistem" target="_blank" href="https://www.1gl.ru/"></a>
+    </div>
+    <div class="row history">
+        <div id="posts">
+        </div>
+    </div>
+
+    <div class="row footer">
+
+    </div>
+</div>
+
+<div id="myModal" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ошибка</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Ошибка: слишком большой файл для загрузки</p>
+                <p>Выбирите файл не более 5 МБ</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalEdit" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Ваша фотография</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id="image-body" class="modal-body">
+                <div id="resizer-demo"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" onclick="canselFoto()">Отмена</button>
+                <button class="btn btn-secondary resizer-rotate">Повернуть</button>
+                <button class="btn btn-secondary resizer-result">Результат</button>
+                <button type="button" class="btn btn-secondary" onclick="attachmentFoto()">Прикрепить</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</html>

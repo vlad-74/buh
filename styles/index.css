@@ -1,0 +1,327 @@
+.content{
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 20px 40px;
+}
+.wrap {
+  position: relative;
+  margin: auto;
+  background-image: url("../img.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 1690px;
+  min-width: 800px;
+}
+.positionA{
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  left: 0%;
+  top: 56%;
+}
+
+.history{
+  margin: auto;
+  background: #F8F4EA;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.footer{
+  height: 30px;
+  margin: auto;
+}
+
+#posts{
+  width: 80%;
+  margin: auto;
+}
+.post{
+  display: flex;
+  background:#FFFFFF;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.photo{
+  margin: auto;
+  padding-left: 20px;
+  flex-basis: 20%;
+}
+
+.photo > img{
+  max-height: 150px;
+  max-width: 150px;
+  overflow: hidden;
+}
+
+.full-name{
+  margin-bottom: 20px;
+}
+
+.post-body{
+  margin-left: 20px;
+  flex-basis: 80%;
+  padding-right: 20px;
+}
+
+.post-text{
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn{
+  float: right;
+  margin: 20px;
+}
+
+.btn-read{
+  height: 30px; 
+  width: 177px;
+  background-color: transparent;
+  background-image:url('../images/read.png');
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+}
+.btn-hide{
+    height: 30px; 
+    width: 177px;
+    background-color: transparent;
+    background-image:url('../images/hide.png');
+    background-repeat:no-repeat;
+    border:none;
+    line-height:50px;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+.display-block2 {
+  display: block;
+  width: 20%;
+  position: absolute;
+  left: 57%;
+  top: 23%;
+  z-index: 20;
+}
+
+.thanks {
+  display: none;
+}
+
+.form{
+  position: relative;
+}
+.txt1 {
+  position: absolute; 
+  left: 555px;
+}
+ .txt {
+  position: absolute; 
+  left: 555px;
+  top: 30px;
+  font-size: 20px;
+  width: 32%;
+  z-index: 10;
+}
+ p {
+  position: absolute; 
+  left: 555px;
+  top: 130px;
+  font-size: 20px;
+  font-weight: bold;
+}
+ #span-plus {
+  position: absolute; 
+  left: 790px;
+  top: 135px;
+  padding: 2px 8px;
+  background: #000;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+}
+#div-txt {
+  position: absolute; 
+  left: 555px;
+  top: 160px;
+  font-weight: normal;
+  color: #b6b6b6;
+}
+.name1 {
+  position: absolute; 
+  left: 555px;
+  top: 190px;
+}
+.name {
+  position: absolute; 
+  left: 555px;
+  top: 220px;
+  font-size: 20px;
+  width: 32%;
+}
+.email1 {
+  position: absolute; 
+  left: 555px;
+  top: 270px;
+}
+.email {
+  position: absolute; 
+  left: 555px;
+  top: 300px;
+  font-size: 20px;
+  width: 32%;
+}
+
+.div-sub{
+  position: absolute; 
+  left: 600px;
+  top: 390px;
+}
+
+.btn-submit{
+  height: 92px; 
+  width: 347px;
+  background-color: transparent;
+  background-image:url('../images/TELL.png');
+  background-repeat:no-repeat;
+  background-size: 80%;
+  border:none;
+  line-height:50px;
+
+}
+
+.btn-submit:hover {
+  background-image:url('../images/TELL_ON.png');
+}
+
+#btn-photo{
+  height: 160px; 
+  width: 160px;
+  background-color: transparent;
+  background-image:url('../images/add_photo.png');
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+  position: absolute; 
+  left: 265px;
+  top: 1200px;
+  cursor: pointer;
+}
+
+#btn-photo:hover{
+  background-image:url('../images/add_photo_on.png');
+}
+
+.btn-sistem{
+  height: 260px; 
+  width: 260px;
+  background-color: transparent;
+  background-image:url('../images/TRY_SISTEM.png');
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+  position: absolute; 
+  left: 87px;
+  top: 52px;
+}
+.btn-sistem:hover{
+  background-image:url('../images/TRY_SISTEM_ON.png');
+}
+
+.media{
+  position: absolute; 
+  left: 170px;
+  top: 1410px;
+  display: flex;
+  width: 360px;
+  height: 95px;
+  transform: rotate(0.98turn);
+}
+
+.btn-vk{
+  height: 90px; 
+  width: 90px;
+  background-color: transparent;
+  background-image:url('../images/BK.png');
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+}
+.btn-fb{
+  height: 90px; 
+  width: 90px;
+  background-color: transparent;
+  background-image:url('../images/Fb.png');
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+}
+.btn-ok{
+  height: 90px; 
+  width: 90px;
+  background-color: transparent;
+  background-image:url('../images/O.png');
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+}
+.btn-wp{
+  height: 90px; 
+  width: 90px;
+  background-color: transparent;
+  background-image:url('../images/Whatsapp.png');
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+}
+
+.btn-vk:hover{
+  background-image:url('../images/BK_on.png');
+}
+.btn-fb:hover{
+  background-image:url('../images/Fb_on.png');  
+}
+.btn-ok:hover{
+  background-image:url('../images/O_on.png'); 
+}
+.btn-wp:hover{
+  background-image:url('../images/Whatsapp_on.png'); 
+}
+
+.label {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.form-control:focus {
+  border: 2px solid #fbd77c;
+  box-shadow: inset 0 1px 1px rgba(251,215,124,0.075), 0 0 18px rgba(251,215,124,0.6);
+}
+
+.invalid-feedback{
+  position: absolute; 
+  left: 555px;
+  top: 340px;
+  font-size: 20px;
+  width: 32%;
+}
+
+.form-control-focus {
+  border: 2px solid #fbd77c;
+  box-shadow: inset 0 1px 1px rgba(251,215,124,0.075), 0 0 18px rgba(251,215,124,0.6);
+}
+
+#file {
+  display: none;
+}
+
+
