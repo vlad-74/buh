@@ -197,6 +197,10 @@ function bindNavigation() {
 bindNavigation();
 
 function send() {
+	document.getElementById("btn-photo").style.pointerEvents = "none";
+	document.getElementById("btn-photo").style.opacity = ".3";
+	document.getElementById("sub").style.pointerEvents = "none";
+	document.getElementById("sub").style.opacity = ".3";
 	thanks();
 }
 
@@ -258,6 +262,7 @@ function validForm() {
 
 	if (!er) {
 		document.getElementById("error").style.display = "none";
+
 		send();
 	} 
 

@@ -18,32 +18,34 @@
 <body>
     <div class="demo"></div>
 <div class="container content">
-    <div class="row wrap">
-        <div class="positionA" style="text-align:center">
-            <img class="thanks" alt="" src='./images/thanks.png'>
-            <form class="form" name="frm">
-                <label for="txt1" class="label txt1">Ваша история</label>
-                <textarea onkeypress="cleanError()"
-                id="txt1"
-                class="form-control txt" 
-                name="txt" id="" 
-                cols="100" rows="3" 
-                placeholder="Смелее" 
-                required></textarea>
-                <p id="foto-txt">Добавить фотографию</p>
+    <div class="row">
+        <div class="col wrap">
+            <div class="positionA" style="text-align:center">
+                <img class="thanks" alt="" src='./images/thanks.png'>
+                <form class="form" name="frm">
+                    <label for="txt1" class="label txt1">Ваша история</label>
+                    <textarea onkeypress="cleanError()"
+                    id="txt1"
+                    class="form-control txt" 
+                    name="txt" id="" 
+                    cols="100" rows="3" 
+                    placeholder="Смелее" 
+                    required></textarea>
+                    <p id="foto-txt">Добавить фотографию</p>
 
-                <label id="span-plus" for="file">+</label>
-                <input type="file" id="file" name="file" onchange="getFoto()" accept=".jpg"/>
+                    <label id="span-plus" for="file">+</label>
+                    <input type="file" id="file" name="file" onchange="getFoto()" accept=".jpg"/>
 
-                <div id="div-txt">Ограничения: Тип jpg и Размер не более 5 МБ</div>
-                <label for="name1" class="label name1">Имя Фамилия</label>
-                <input onkeypress="cleanError()" required id="name1" class="form-control name" type="text" placeholder="Укажите свою Фамилию и Имя">
-                <label for="email1" class="label email1">Эл. почта</label>
-                <input onkeypress="cleanError()" required id="email1" class="form-control email" type="text" placeholder="name@example.com">
-                <div id ="error" class="invalid-feedback">Не все  поля заполнены.</div>
-            </form>
-            <div class="div-sub">
-                <button class="btn btn-submit" onclick="validForm()"></button>
+                    <div id="div-txt">Ограничения: Тип jpg и Размер не более 5 МБ</div>
+                    <label for="name1" class="label name1">Имя Фамилия</label>
+                    <input onkeypress="cleanError()" required id="name1" class="form-control name" type="text" placeholder="Укажите свою Фамилию и Имя">
+                    <label for="email1" class="label email1">Эл. почта</label>
+                    <input onkeypress="cleanError()" required id="email1" class="form-control email" type="text" placeholder="name@example.com">
+                    <div id ="error" class="invalid-feedback">Не все  поля заполнены.</div>
+                </form>
+                <div class="div-sub">
+                    <button id="sub" class="btn btn-submit" onclick="validForm()"></button>
+                </div>
             </div>
         </div>
         <div class="media">
@@ -56,8 +58,7 @@
         <a class="btn-sistem" target="_blank" href="https://www.1gl.ru/"></a>
     </div>
     <div class="row history">
-        <div id="posts">
-        </div>
+        <div id="posts"></div>
     </div>
 
     <div class="row footer">
@@ -102,7 +103,7 @@
                 <button class="btn btn-secondary" data-dismiss="modal" onclick="canselFoto()">Отмена</button>
                 <button class="btn btn-secondary resizer-rotate">Повернуть</button>
                 <button class="btn btn-secondary resizer-result">Результат</button>
-                <button type="button" class="btn btn-secondary" onclick="attachmentFoto()">Прикрепить</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="attachmentFoto()">Прикрепить</button>
             </div>
         </div>
 
