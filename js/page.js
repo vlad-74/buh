@@ -97,7 +97,7 @@ function canselFoto(){
 
 }
 function output(node) {
-	var existing = $('#result .croppie-result');
+	var existing = $("#result .resizer-result");
 	if (existing.length > 0) {
 		existing[0].parentNode.replaceChild(node, existing[0]);
 	}
@@ -106,70 +106,52 @@ function output(node) {
 	}
 }
 
-function popupResult(result) {
-	var html;
-	if (result.html) {
-		html = result.html;
+function fixBinary(bin) {
+	var length = bin.length;
+	var buf = new ArrayBuffer(length);
+	var arr = new Uint8Array(buf);
+	for (var i = 0; i < length; i++) {
+		arr[i] = bin.charCodeAt(i);
 	}
-	if (result.src) {
-		html = '<img src="' + result.src + '" />';
-		console.log(result.src);
-	}
-	swal({
-		title: '',
-		html: true,
-		text: html,
-		allowOutsideClick: true
-	});
-	setTimeout(function () {
-		$('.sweet-alert').css('margin', function () {
-			var top = -1 * ($(this).height() / 2),
-				left = -1 * ($(this).width() / 2);
-
-			return top + 'px 0 0 ' + left + 'px';
-		});
-	}, 1);
+	return buf;
 }
 
 function getMeta(varA, varB) {
 	if (typeof varB !== 'undefined') {
 		let name = document.getElementById("file");
+
 		var vEl = document.getElementById('resizer-demo'),
-			resize = new Croppie(vEl, {
-				viewport: { width: varA - 40, height: varB - 40 },
-				boundary: { width: varA, height: varB },
-				showZoomer: false,
-				enableResize: true,
-				enableOrientation: true,
-				mouseWheelZoom: 'ctrl'
-			});
-		resize.bind({
-			url: readURL(name),
-			// orientation: 1,
-			// zoom: 0
+		resize = new Croppie(vEl, {
+			enableExif: true,
+			viewport: { width: varA - 40, height: varB - 40 },
+			boundary: { width: varA, height: varB },
+			showZoomer: false,
+			enableResize: true,
+			enableOrientation: true,
+			mouseWheelZoom: 'ctrl'
 		});
+		resize.bind({url: readURL(name)});
+
+		document.querySelector('.resizer-rotate').addEventListener('click', function (ev) {
+			resize.rotate(parseInt("90degrees"));
+		});
+
 		vEl.addEventListener('update', function (ev) {
 			resize.zoom = 0;
-			console.log('resize update', ev.detail.zoom);
+			// console.log('resize update', ev.detail.zoom);
 		});
+
 		document.querySelector('.resizer-result').addEventListener('click', function (ev) {
 			size = "viewport";
 			resize.result({
-				type: 'canvas',
+				type: "blob",
 				size: size,
-				resultSize: {
-					width: 50,
-					height: 50
-				}
-			}).then(function (resp) {
-				popupResult({
-					src: resp
+			})
+			.then(function(blob) {
+				popupResult({ 
+					src: blob
 				});
 			});
-		});
-
-		$('.resizer-rotate').on('click', function (ev) {
-			resize.rotate(parseInt("90deg"));
 		});
 
 		$("#modalEdit").modal("show");
@@ -180,6 +162,49 @@ function getMeta(varA, varB) {
 			getMeta(this.width, this.height);
 		}
 	}
+}
+
+function popupResult(result) {
+  // var base64 =
+  // 	"iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB1klEQVR42n2TzytEURTHv3e8N1joRhZG" +
+  // 	"zJsoCjsLhcw0jClKWbHwY2GnLGUlIfIP2IjyY2djZTHSMJNQSilFNkz24z0/Ms2MrnvfvMu8mcfZvPvu" +
+  // 	"Pfdzz/mecwgKLNYKb0cFEgXbRvwV2s2HuWazCbzKA5LvNecDXayBjv9NL7tEpSNgbYzQ5kZmAlSXgsGG" +
+  // 	"XmS+MjhKxDHgC+quyaPKQtoPYMQPOh5U9H6tBxF+Icy/aolqAqLP5wjWd5r/Ip3YXVILrF4ZRYAxDhCO" +
+  // 	"J/yCwiMI+/xgjOEzmzIhAio04GeGayIXjQ0wGoAuQ5cmIjh8jNo0GF78QwNhpyvV1O9tdxSSR6PLl51F" +
+  // 	"nIK3uQ4JJQME4sCxCIRxQbMwPNSjqaobsfskm9l4Ky6jvCzWEnDKU1ayQPe5BbN64vYJ2vwO7CIeLIi3" +
+  // 	"ciYAoby0M4oNYBrXgdgAbC/MhGCRhyhCZwrcEz1Ib3KKO7f+2I4iFvoVmIxHigGiZHhPIb0bL1bQApFS" +
+  // 	"9U/AC0ulSXrrhMotka/lQy0Ic08FDeIiAmDvA2HX01W05TopS2j2/H4T6FBVbj4YgV5+AecyLk+Ctvms" +
+  // 	"QWK8WZZ+Hdf7QGu7fobMuZHyq1DoJLvUqQrfM966EU/qYGwAAAAASUVORK5CYII=";
+
+  // var binary = fixBinary(atob(base64));
+  // var blob = new Blob([binary], { type: 'image/png' });
+  // console.log('blob', blob);
+
+  var html;
+  if (result.html) {
+    html = result.html;
+  }
+  if (result.src) {
+    html = '<img src="' + result.src + '" />';
+	console.log("res", result.src);
+  }
+
+  swal({
+    title: "",
+    html: true,
+    // text: html,
+    icon: URL.createObjectURL(result.src), //'C:/Users/work/Desktop/Download/77.jpg',
+    allowOutsideClick: true
+  });
+
+  setTimeout(function() {
+    $(".sweet-alert").css("margin", function() {
+      var top = -1 * ($(this).height() / 2),
+        left = -1 * ($(this).width() / 2);
+
+      return top + "px 0 0 " + left + "px";
+    });
+  }, 1);
 }
 
 function bindNavigation() {
