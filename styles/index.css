@@ -22,7 +22,7 @@
 }
 
 .history{
-  /*margin: auto;*/
+  margin: auto;
   background: #F8F4EA;
   overflow: hidden;
   text-overflow: ellipsis;
