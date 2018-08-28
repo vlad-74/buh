@@ -194,15 +194,14 @@ function getMeta(varA, varB) {
 
 
 function popupResult(result) {
-//   console.log("3434343", imgToBase64ToBlob(document.getElementById("file")));
-
+//    imgToBase64ToBlob(document.getElementById("file"));
+  console.log(result.src);
   var html;
   if (result.html) {
     html = result.html;
   }
   if (result.src) {
     html = '<img src="' + result.src + '" />';
-	console.log("res", result.src);
   }
 
   swal({ 
@@ -254,7 +253,39 @@ function thanks() {
   }
 }
 
+function httpGetPromise (url) {
+	return new Promise(function (resolve, reject) {
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', url, true);
+
+		xhr.onload = function () {
+			if (this.status == 200) {
+				resolve(this.response);
+			} else {
+				var error = new Error(this.statusText);
+				error.code = this.status;
+				reject(error);
+			}
+		};
+		xhr.onerror = function () {
+			reject(new Error("Network Error"));
+		};
+		xhr.send();
+	});
+}
+
 function viewPosts() {
+
+	httpGetPromise("https://itunes.apple.com/search?term=hulk&entity=movie").then(
+		res => {
+			jsn = JSON.parse(res);
+			console.log(jsn);
+		},
+		err=>{
+			console.log(err);	
+		}
+  	);
+
 	for (let i = 0; i < posts.length; i++) {
 		const element = posts[i];
 		addPost(element);

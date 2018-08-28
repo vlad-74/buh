@@ -16,41 +16,42 @@
     <meta charset="utf-8">
 </head>
 <body>
-    <div class="demo"></div>
+
+<div class="demo"></div>
 <div class="container content">
     <div class="row wrap">
-            <div class="positionA" style="text-align:center">
-                <img class="thanks" alt="" src='./images/thanks.png'>
-                <form class="form" name="frm">
-                    <label for="txt1" class="label txt1">Ваша история</label>
-                    <textarea onkeypress="cleanError()"
-                    id="txt1"
-                    class="form-control txt" 
-                    name="txt" 
-                    cols="100" rows="3" 
-                    placeholder="Смелее" 
-                    required></textarea>
-                    <p id="foto-txt">Добавить фотографию</p>
+        <div class="positionA" style="text-align:center">
+            <img class="thanks" alt="" src='./images/thanks.png'>
+            <form class="form" name="frm">
+                <label for="txt1" class="label txt1">Ваша история</label>
+                <textarea onkeypress="cleanError()"
+                id="txt1"
+                class="form-control txt" 
+                name="txt" 
+                cols="100" rows="3" 
+                placeholder="Смелее" 
+                required></textarea>
+                <p id="foto-txt">Добавить фотографию</p>
 
-                    <label id="span-plus" for="file">+</label>
-                    <input type="file" id="file" name="file" onchange="getFoto()" accept=".jpg"/>
+                <label id="span-plus" for="file">+</label>
+                <input type="file" id="file" name="file" onchange="getFoto()" accept=".jpg"/>
 
-                    <div id="div-txt">Ограничения: Тип jpg и Размер не более 5 МБ</div>
-                    <label for="name1" class="label name1">Имя Фамилия</label>
-                    <input onkeypress="cleanError()" required id="name1" class="form-control name" type="text" placeholder="Укажите свою Фамилию и Имя">
-                    <label for="email1" class="label email1">Эл. почта</label>
-                    <input onkeypress="cleanError()" required id="email1" class="form-control email" type="text" placeholder="name@example.com">
-                    <div id ="error" class="invalid-feedback">Не все  поля заполнены.</div>
-                </form>
-                <div class="div-sub">
-                    <button id="sub" class="btn btn-submit" onclick="validForm()"></button>
-                </div>
+                <div id="div-txt">Ограничения: Тип jpg и Размер не более 5 МБ</div>
+                <label for="name1" class="label name1">Имя Фамилия</label>
+                <input onkeypress="cleanError()" required id="name1" class="form-control name" type="text" placeholder="Укажите свою Фамилию и Имя">
+                <label for="email1" class="label email1">Эл. почта</label>
+                <input onkeypress="cleanError()" required id="email1" class="form-control email" type="text" placeholder="name@example.com">
+                <div id ="error" class="invalid-feedback">Не все  поля заполнены.</div>
+            </form>
+            <div class="div-sub">
+                <button id="sub" class="btn btn-submit" onclick="validForm()"></button>
             </div>
+        </div>
         <div class="media">
-            <a class="btn-vk" target="_blank" href="https://vk.com/"></a>
-            <a class="btn-fb" target="_blank" href="https://www.facebook.com/"></a>
-            <a class="btn-ok" target="_blank" href="https://ok.ru/"></a>
-            <a class="btn-wp" target="_blank" href="https://web.whatsapp.com/"></a>
+            <a class="btn-vk" target="_blank" href="https://share.yandex.net/go.xml?service=vkontakte&url=http://story.1gl.ru/&title=Однажды в бухгалтерии"></a>
+            <a class="btn-fb" target="_blank" href="https://share.yandex.net/go.xml?service=facebook&url=http://story.1gl.ru/&title=Однажды в бухгалтерии"></a>
+            <a class="btn-ok" target="_blank" href="https://share.yandex.net/go.xml?service=odnoklassniki&url=http://story.1gl.ru/&title=Однажды в бухгалтерии"></a>
+            <a class="btn-wp" target="_blank" href="https://api.whatsapp.com/send?phone=whatsappphonenumber&text=http://story.1gl.ru"></a>
         </div>
         <label id="btn-photo" for="file"></label>
         <a class="btn-sistem" target="_blank" href="https://www.1gl.ru/"></a>
