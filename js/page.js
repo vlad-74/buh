@@ -52,7 +52,6 @@ var posts = [
 ];
 
 function changeText(e,id) {
-	console.log(e);
 	if (e.target.className === "btn btn-read") {
 		e.target.className = "btn btn-hide";
     	document.getElementById(id).setAttribute("class", "");
@@ -195,7 +194,6 @@ function getMeta(varA, varB) {
 
 function popupResult(result) {
 //    imgToBase64ToBlob(document.getElementById("file"));
-  console.log(result.src);
   var html;
   if (result.html) {
     html = result.html;
