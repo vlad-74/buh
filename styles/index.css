@@ -30,6 +30,10 @@
 .footer{
   height: 30px;
   margin: auto;
+  color: #878787;
+}
+.footer h6{
+  margin: auto 0 auto 200px;
 }
 
 #posts{
