@@ -1,49 +1,48 @@
 var fotoPath;
 // document.getElementById("span-plus").addEventListener("click", getFoto);
-var txt = `
-Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-Alias nesciunt aliquam sint aliquid enim quisquam amet, minus ea sed neque perferendis corrupti
-rspiciatis, doloribus earum incidunt sunt rem vero ducimus fuga quaerat necessitatibus
-similique facere veritatis excepturi ? Earum odit autem ipsa quos.Architecto voluptatum quia
-doloremque autem aperiam, modi sed odit! Nobis et voluptate architecto, laudantium quisquam
-minima, impedit provident aut praesentium, eligendi quas labore dignissimos quaerat ?
-	Inventore nesciunt tenetur maiores vitae quaerat eveniet adipisci, architecto voluptatem
-magni necessitatibus voluptatibus molestiae ab a porro, enim ipsa perferendis iste ipsum
-aliquid officiis! Dignissimos, commodi id.Architecto, cupiditate accusamus! Quo neque hic
-nobis, harum, aut asperiores officia explicabo amet dignissimos nihil enim nisi pariatur
-ratione praesentium odio est nam minima aspernatur ? Ullam blanditiis necessitatibus itaque
-minima aspernatur autem inventore nisi eum aperiam saepe doloribus animi architecto debitis
-fugit delectus, incidunt voluptatem excepturi velit.Doloribus optio doloremque fugit.
-Provident possimus sint iusto sunt, animi odio ? Tenetur sequi quae tempora! Magni odio quos
-repellendus itaque doloribus eveniet odit deserunt perspiciatis.Illum perspiciatis saepe eius
-labore, veniam consequatur dolor, aliquam similique amet minus enim voluptas dolorum aliquid
-omnis, perferendis cumque ipsam praesentium qui ? Enim autem obcaecati numquam voluptates
-aspernatur laudantium quod cupiditate ab amet eum ducimus sapiente in praesentium, ut,
-	voluptatibus similique maxime exercitationem optio molestias architecto.Laudantium
-adipisci dolor obcaecati ipsa qui quae facere dolorum, molestias asperiores facilis neque
-eveniet.Repellendus aspernatur harum, blanditiis, voluptatibus enim fugiat, error consequatur
-eius esse impedit unde officiis non dignissimos tenetur nesciunt recusandae nihil debitis
-sed porro excepturi distinctio hic corrupti.Non quam facere omnis, ipsam totam nemo a!
-Reiciendis corrupti exercitationem placeat debitis rerum commodi, officiis maxime repellendus
-vero earum animi beatae voluptate non similique quo quia nemo ipsam error sint.Temporibus
-commodi velit fugit sed repellat, doloremque eius, earum quam nobis et eveniet minima vitae
-laudantium illo, inventore modi quia ipsam ipsum placeat eligendi! Voluptas quasi non vel
-necessitatibus ? Corporis in, sunt praesentium, explicabo mollitia ut quasi accusantium soluta
-excepturi natus possimus corrupti obcaecati rem dignissimos ea.Aliquam quidem atque possimus
-alias doloribus similique in non at quasi dolorem eius eaque, deserunt molestias repudiandae
-ad architecto magni! Eveniet cumque corporis deserunt excepturi vitae, eaque, harum ullam
-atque repellat consectetur, error vel distinctio.Dolorum obcaecati alias enim a mollitia
-eligendi itaque praesentium, ab reprehenderit dolor nihil provident qui cum dignissimos sed
-aperiam ? Voluptatem laborum eveniet eligendi ut soluta.Magnam aliquam maxime recusandae
-asperiores quas accusantium officia quisquam perferendis ut, quia sapiente dolorum
-necessitatibus odit nam fuga nesciunt atque! Aut placeat nisi sint eaque ad, eligendi
-corrupti temporibus saepe suscipit eveniet minus, soluta a facere nihil enim error nemo
-delectus ipsa quo perspiciatis dolores velit molestiae harum.Iusto temporibus porro incidunt
-nihil eum voluptate, vel harum reprehenderit aliquid quis eveniet exercitationem nemo ab
-consectetur aspernatur voluptatem, doloremque similique.Incidunt, repellendus voluptatibus
-cumque ab ea eius perferendis nemo dignissimos ? Rerum sunt sit, quam modi repudiandae vero
-minus sed quasi deserunt error tenetur voluptatibus corrupti, explicabo, temporibus voluptates
-delectus veniam quia odio laboriosam.Eius repellendus doloremque voluptatum! Nostrum, eligendi ipsum!`;
+var txt = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' +
+'Alias nesciunt aliquam sint aliquid enim quisquam amet, minus ea sed neque perferendis corrupti'
++ 'rspiciatis, doloribus earum incidunt sunt rem vero ducimus fuga quaerat necessitatibus'
++ 'similique facere veritatis excepturi ? Earum odit autem ipsa quos.Architecto voluptatum quia'
++ 'doloremque autem aperiam, modi sed odit! Nobis et voluptate architecto, laudantium quisquam'
++ 'minima, impedit provident aut praesentium, eligendi quas labore dignissimos quaerat ?'
+	+ 'Inventore nesciunt tenetur maiores vitae quaerat eveniet adipisci, architecto voluptatem'
++ 'magni necessitatibus voluptatibus molestiae ab a porro, enim ipsa perferendis iste ipsum'
++ 'aliquid officiis! Dignissimos, commodi id.Architecto, cupiditate accusamus! Quo neque hic'
++ 'nobis, harum, aut asperiores officia explicabo amet dignissimos nihil enim nisi pariatur'
++ 'ratione praesentium odio est nam minima aspernatur ? Ullam blanditiis necessitatibus itaque'
++ 'minima aspernatur autem inventore nisi eum aperiam saepe doloribus animi architecto debitis'
++ 'fugit delectus, incidunt voluptatem excepturi velit.Doloribus optio doloremque fugit.'
++ 'Provident possimus sint iusto sunt, animi odio ? Tenetur sequi quae tempora! Magni odio quos'
++ 'repellendus itaque doloribus eveniet odit deserunt perspiciatis.Illum perspiciatis saepe eius'
++ 'labore, veniam consequatur dolor, aliquam similique amet minus enim voluptas dolorum aliquid'
++ 'omnis, perferendis cumque ipsam praesentium qui ? Enim autem obcaecati numquam voluptates'
++ 'aspernatur laudantium quod cupiditate ab amet eum ducimus sapiente in praesentium, ut,'
+	+ 'voluptatibus similique maxime exercitationem optio molestias architecto.Laudantium'
++ 'adipisci dolor obcaecati ipsa qui quae facere dolorum, molestias asperiores facilis neque'
++ 'eveniet.Repellendus aspernatur harum, blanditiis, voluptatibus enim fugiat, error consequatur'
++ 'eius esse impedit unde officiis non dignissimos tenetur nesciunt recusandae nihil debitis'
++ 'sed porro excepturi distinctio hic corrupti.Non quam facere omnis, ipsam totam nemo a!'
++ 'Reiciendis corrupti exercitationem placeat debitis rerum commodi, officiis maxime repellendus'
++ 'vero earum animi beatae voluptate non similique quo quia nemo ipsam error sint.Temporibus'
++ 'commodi velit fugit sed repellat, doloremque eius, earum quam nobis et eveniet minima vitae'
++ 'laudantium illo, inventore modi quia ipsam ipsum placeat eligendi! Voluptas quasi non vel'
++ 'necessitatibus ? Corporis in, sunt praesentium, explicabo mollitia ut quasi accusantium soluta'
++ 'excepturi natus possimus corrupti obcaecati rem dignissimos ea.Aliquam quidem atque possimus'
++ 'alias doloribus similique in non at quasi dolorem eius eaque, deserunt molestias repudiandae'
++ 'ad architecto magni! Eveniet cumque corporis deserunt excepturi vitae, eaque, harum ullam'
++ 'atque repellat consectetur, error vel distinctio.Dolorum obcaecati alias enim a mollitia'
++ 'eligendi itaque praesentium, ab reprehenderit dolor nihil provident qui cum dignissimos sed'
++ 'aperiam ? Voluptatem laborum eveniet eligendi ut soluta.Magnam aliquam maxime recusandae'
++ 'asperiores quas accusantium officia quisquam perferendis ut, quia sapiente dolorum'
++ 'necessitatibus odit nam fuga nesciunt atque! Aut placeat nisi sint eaque ad, eligendi'
++ 'corrupti temporibus saepe suscipit eveniet minus, soluta a facere nihil enim error nemo'
++ 'delectus ipsa quo perspiciatis dolores velit molestiae harum.Iusto temporibus porro incidunt'
++ 'nihil eum voluptate, vel harum reprehenderit aliquid quis eveniet exercitationem nemo ab'
++ 'consectetur aspernatur voluptatem, doloremque similique.Incidunt, repellendus voluptatibus'
++ 'cumque ab ea eius perferendis nemo dignissimos ? Rerum sunt sit, quam modi repudiandae vero'
++ 'minus sed quasi deserunt error tenetur voluptatibus corrupti, explicabo, temporibus voluptates'
++ 'delectus veniam quia odio laboriosam.Eius repellendus doloremque voluptatum! Nostrum, eligendi ipsum!';
 
 var resize;
 
@@ -52,13 +51,14 @@ var posts = [
 	{ id: 2, img: './images/77.jpg', fio: 'Петров Петр Петрович', txt: '222 ' + txt } 
 ];
 
-function changeText(e) {
-	if (e.target.classList.value === "btn btn-read") {
-		e.target.classList.value = "btn btn-hide";
-		e.path[2].children[1].classList.value = ""
+function changeText(e,id) {
+	console.log(e);
+	if (e.target.className === "btn btn-read") {
+		e.target.className = "btn btn-hide";
+    	document.getElementById(id).setAttribute("class", "");
 	} else {
-		e.target.classList.value = "btn btn-read";
-		e.path[2].children[1].classList.value = "post-text";
+			e.target.className = "btn btn-read";
+			document.getElementById(id).setAttribute("class", "post-text");
 	}
 }
 
@@ -263,24 +263,8 @@ function viewPosts() {
 
 function addPost(element){
 	var m = document.createElement('div');
-	m.id = element.id;
 	m.className = 'post';
-	m.innerHTML = `
-		<div class='photo'>
-			<img alt="" src=${element.img || ""}>
-        </div>
-		<div class='post-body'>
-			<div class="full-name">
-				<h2>${element.fio || ""} </h2>
-			</div>
-			<div class='post-text'>
-			${element.txt || ""} 
-			</div>
-			<div class='post-btn'>
-				<button class="btn btn-read" onclick="changeText(event)"></button>
-			</div>
-        </div>
-        `;
+	m.innerHTML = "\n\t\t<div class='photo'>\n\t\t\t<img alt=\"\" src=" + (element.img || "") + ">\n        </div>\n\t\t<div class='post-body'>\n\t\t\t<div class=\"full-name\">\n\t\t\t\t<h2>" + (element.fio || "") + " </h2>\n\t\t\t</div>\n\t\t\t<div id = \"" + element.id + "\" class='post-text'>\n\t\t\t" + (element.txt || "") + " \n\t\t\t</div>\n\t\t\t<div class='post-btn'>\n\t\t\t\t<button class=\"btn btn-read\" onclick=\"changeText(event, " + element.id + ")\"></button>\n\t\t\t</div>\n        </div>\n        ";
 	document.getElementById('posts').appendChild(m);
 }
 
