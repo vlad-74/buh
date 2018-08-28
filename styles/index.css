@@ -2,7 +2,7 @@
   max-width: 1200px;
   width: 100%;
   margin: auto;
-  padding: 20px 40px;
+  /* padding: 20px 40px; */
 }
 .wrap {
   position: relative;
@@ -120,11 +120,13 @@
 .form{
   position: relative;
 }
+
 .txt1 {
   position: absolute; 
   left: 555px;
 }
- .txt {
+
+.txt {
   position: absolute; 
   left: 555px;
   top: 30px;
@@ -132,14 +134,16 @@
   width: 32%;
   z-index: 10;
 }
- p {
+
+p {
   position: absolute; 
   left: 555px;
   top: 130px;
   font-size: 20px;
   font-weight: bold;
 }
- #span-plus {
+
+#span-plus {
   position: absolute; 
   left: 790px;
   top: 135px;
@@ -235,6 +239,19 @@
 }
 .btn-sistem:hover{
   background-image:url('../images/TRY_SISTEM_ON.png');
+}
+
+.btn-logo{
+  height: 55px; 
+  width: 130px;
+  background-color: transparent;
+  background-image:url('../images/logo-black.png');
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+  position: absolute; 
+  left: 840px;
+  top: 55px;
 }
 
 .media{

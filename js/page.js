@@ -164,21 +164,37 @@ function getMeta(varA, varB) {
 	}
 }
 
-function popupResult(result) {
-  // var base64 =
-  // 	"iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB1klEQVR42n2TzytEURTHv3e8N1joRhZG" +
-  // 	"zJsoCjsLhcw0jClKWbHwY2GnLGUlIfIP2IjyY2djZTHSMJNQSilFNkz24z0/Ms2MrnvfvMu8mcfZvPvu" +
-  // 	"Pfdzz/mecwgKLNYKb0cFEgXbRvwV2s2HuWazCbzKA5LvNecDXayBjv9NL7tEpSNgbYzQ5kZmAlSXgsGG" +
-  // 	"XmS+MjhKxDHgC+quyaPKQtoPYMQPOh5U9H6tBxF+Icy/aolqAqLP5wjWd5r/Ip3YXVILrF4ZRYAxDhCO" +
-  // 	"J/yCwiMI+/xgjOEzmzIhAio04GeGayIXjQ0wGoAuQ5cmIjh8jNo0GF78QwNhpyvV1O9tdxSSR6PLl51F" +
-  // 	"nIK3uQ4JJQME4sCxCIRxQbMwPNSjqaobsfskm9l4Ky6jvCzWEnDKU1ayQPe5BbN64vYJ2vwO7CIeLIi3" +
-  // 	"ciYAoby0M4oNYBrXgdgAbC/MhGCRhyhCZwrcEz1Ib3KKO7f+2I4iFvoVmIxHigGiZHhPIb0bL1bQApFS" +
-  // 	"9U/AC0ulSXrrhMotka/lQy0Ic08FDeIiAmDvA2HX01W05TopS2j2/H4T6FBVbj4YgV5+AecyLk+Ctvms" +
-  // 	"QWK8WZZ+Hdf7QGu7fobMuZHyq1DoJLvUqQrfM966EU/qYGwAAAAASUVORK5CYII=";
+// function imgToBase64ToBlob(element) {
+// 	var file = element.files[0];
+// 	var reader = new FileReader();
+// 	reader.onloadend = function () {
+// 		let st = reader.result.split("base64,");
+// 		var binary = fixBinary(atob(st[1]));
+// 		var blob = new Blob([binary], { type: 'image/png' });
+// 		console.log("blob", blob);
+// 		swal({
+// 			title: "",
+// 			html: true,
+// 			icon: URL.createObjectURL(blob), 
+// 			allowOutsideClick: true
+// 		});
 
-  // var binary = fixBinary(atob(base64));
-  // var blob = new Blob([binary], { type: 'image/png' });
-  // console.log('blob', blob);
+// 		setTimeout(function () {
+// 			$(".sweet-alert").css("margin", function () {
+// 				var top = -1 * ($(this).height() / 2),
+// 					left = -1 * ($(this).width() / 2);
+
+// 				return top + "px 0 0 " + left + "px";
+// 			});
+// 		}, 1);
+// 	}
+// 	reader.readAsDataURL(file);
+// }
+
+
+
+function popupResult(result) {
+//   console.log("3434343", imgToBase64ToBlob(document.getElementById("file")));
 
   var html;
   if (result.html) {
@@ -189,13 +205,12 @@ function popupResult(result) {
 	console.log("res", result.src);
   }
 
-  swal({
-    title: "",
-    html: true,
-    // text: html,
-    icon: URL.createObjectURL(result.src), //'C:/Users/work/Desktop/Download/77.jpg',
-    allowOutsideClick: true
-  });
+  swal({ 
+	  title: "", 
+	  html: true, 
+	  // text: html,
+	  icon: URL.createObjectURL(result.src), //'C:/Users/work/Desktop/Download/77.jpg', blob
+	  allowOutsideClick: true }); 
 
   setTimeout(function() {
     $(".sweet-alert").css("margin", function() {
