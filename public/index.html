@@ -18,6 +18,7 @@
 <body>
 
 <div class="demo"></div>
+
 <div class="container content">
     <div class="row wrap">
         <div class="positionA" style="text-align:center">
@@ -92,16 +93,16 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title" id="exampleModalLabel">Ваша фотография</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                </button>
+                </button> -->
             </div>
             <div id="image-body" class="modal-body">
-                <div id="resizer-demo"></div>
+                <img id="resizer-demo" class="my-image" src="" />
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" onclick="canselFoto()">Отмена</button>
-                <button class="btn btn-secondary resizer-rotate">Повернуть</button>
+                <button class="btn btn-secondary resizer-rotate" >Повернуть</button>
                 <button class="btn btn-secondary resizer-result">Результат</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="attachmentFoto()">Прикрепить</button>
             </div>

@@ -1,0 +1,24 @@
+{
+  "name": "buh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vlad-74/buh.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vlad-74/buh/issues"
+  },
+  "homepage": "https://github.com/vlad-74/buh#readme",
+  "dependencies": {
+    "node-static": "^0.7.10",
+    "open": "0.0.5"
+  }
+}

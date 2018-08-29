@@ -67,16 +67,16 @@ function readURL(input) {
 
 
 function getFoto() {
-	let name = document.getElementById("file");
-	if (Math.round(name.files.item(0).size / 1024 / 1024) <= 5) {
-		getMeta(readURL(name));
+	var name1 = document.getElementById("file");
+	if (Math.round(name1.files.item(0).size / 1024 / 1024) <= 5) {
+		getMeta(readURL(name1));
 	} else {
 		$("#myModal").modal("show");
 	}
 };
 
 function attachmentFoto(){
-	let name = document.getElementById("file");
+	var name = document.getElementById("file");
 	fotoPath = name.value;
 	document.getElementById("span-plus").style.display = "none";
 	document.getElementById("btn-photo").style.pointerEvents = "none";
@@ -117,11 +117,13 @@ function fixBinary(bin) {
 
 function getMeta(varA, varB) {
 	if (typeof varB !== 'undefined') {
-		let name = document.getElementById("file");
+		var name2 = document.getElementById("file");
+		var mc = document.getElementsByClassName("modal-content");
+		mc[1].style.minWidth = varA + 60 + "px";
 
 		var vEl = document.getElementById('resizer-demo'),
 		resize = new Croppie(vEl, {
-			enableExif: true,
+			// enableExif: true,
 			viewport: { width: varA - 40, height: varB - 40 },
 			boundary: { width: varA, height: varB },
 			showZoomer: false,
@@ -129,7 +131,8 @@ function getMeta(varA, varB) {
 			enableOrientation: true,
 			mouseWheelZoom: 'ctrl'
 		});
-		resize.bind({url: readURL(name)});
+		resize.bind({url: readURL(name2)});
+
 
 		document.querySelector('.resizer-rotate').addEventListener('click', function (ev) {
 			resize.rotate(parseInt("90degrees"));
@@ -137,19 +140,17 @@ function getMeta(varA, varB) {
 
 		vEl.addEventListener('update', function (ev) {
 			resize.zoom = 0;
-			// console.log('resize update', ev.detail.zoom);
 		});
 
 		document.querySelector('.resizer-result').addEventListener('click', function (ev) {
 			size = "viewport";
+			resize.bind();
 			resize.result({
 				type: "blob",
 				size: size,
 			})
 			.then(function(blob) {
-				popupResult({ 
-					src: blob
-				});
+				popupResult(blob);
 			});
 		});
 
@@ -167,10 +168,9 @@ function getMeta(varA, varB) {
 // 	var file = element.files[0];
 // 	var reader = new FileReader();
 // 	reader.onloadend = function () {
-// 		let st = reader.result.split("base64,");
+// 		let st = reader.result.split("base64,"); // let st = reader.result
 // 		var binary = fixBinary(atob(st[1]));
 // 		var blob = new Blob([binary], { type: 'image/png' });
-// 		console.log("blob", blob);
 // 		swal({
 // 			title: "",
 // 			html: true,
@@ -192,22 +192,14 @@ function getMeta(varA, varB) {
 
 
 
-function popupResult(result) {
+function popupResult(blob) {
 //    imgToBase64ToBlob(document.getElementById("file"));
-  var html;
-  if (result.html) {
-    html = result.html;
-  }
-  if (result.src) {
-    html = '<img src="' + result.src + '" />';
-  }
-
   swal({ 
 	  title: "", 
-	  html: true, 
-	  // text: html,
-	  icon: URL.createObjectURL(result.src), //'C:/Users/work/Desktop/Download/77.jpg', blob
-	  allowOutsideClick: true }); 
+	  content: true, 
+	  icon: URL.createObjectURL(blob), 
+	  allowOutsideClick: true     
+	}); 
 
   setTimeout(function() {
     $(".sweet-alert").css("margin", function() {
@@ -251,40 +243,22 @@ function thanks() {
   }
 }
 
-function httpGetPromise (url) {
-	return new Promise(function (resolve, reject) {
-		var xhr = new XMLHttpRequest();
-		xhr.open('GET', url, true);
-
-		xhr.onload = function () {
-			if (this.status == 200) {
-				resolve(this.response);
-			} else {
-				var error = new Error(this.statusText);
-				error.code = this.status;
-				reject(error);
-			}
-		};
-		xhr.onerror = function () {
-			reject(new Error("Network Error"));
-		};
-		xhr.send();
+function viewPosts() {
+	  
+	$.ajax({
+		url: 'https://itunes.apple.com/search?term=hulk&entity=movie',
+		type: 'GET',
+		crossDomain: true,
+		dataType: 'jsonp',
+		success: function (result) { addPosts(result); },
+		error: function () { alert('Ошибка при загрузке!'); },
 	});
+
 }
 
-function viewPosts() {
+function addPosts (result) {
 
-	httpGetPromise("https://itunes.apple.com/search?term=hulk&entity=movie").then(
-		res => {
-			jsn = JSON.parse(res);
-			console.log(jsn);
-		},
-		err=>{
-			console.log(err);	
-		}
-  	);
-
-	for (let i = 0; i < posts.length; i++) {
+	for (var i = 0; i < posts.length; i++) {
 		const element = posts[i];
 		addPost(element);
 	}
@@ -298,11 +272,10 @@ function addPost(element){
 }
 
 function validForm() {
-	let array = [0,2,3];
+	var array = [0,2,3];
 	var er = false;
-
-	for (let i = 0; i < array.length; i++) {
-		const j = array[i];
+	for (i = 0; i < array.length; i++) {
+		var j = array[i];
 		if (
 			!document.forms[0][j].validity.valid || 
 			!document.forms[0][j].value.trim().length
@@ -315,7 +288,6 @@ function validForm() {
 
 	if (!er) {
 		document.getElementById("error").style.display = "none";
-
 		send();
 	} 
 
@@ -330,3 +302,4 @@ function cleanError(){
 document.addEventListener('DOMContentLoaded', function () { // Аналог $(document).ready(function(){
 	viewPosts();
 });
+
