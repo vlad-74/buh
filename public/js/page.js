@@ -94,6 +94,8 @@ function canselFoto(){
 	m.id = "resizer-demo";
 	document.getElementById("image-body").appendChild(m);
 
+	document.getElementById("result").src = '../images/avatar.png';
+
 }
 function output(node) {
 	var existing = $("#result .resizer-result");
@@ -123,7 +125,7 @@ function getMeta(varA, varB) {
 		mc[1].style.minWidth = varA + 60 + "px";
 
 		var md = document.getElementsByClassName("modal-dialog modal-lg");
-		md[0].style.minWidth = varA + 60 + "px";
+		md[0].style.minWidth = varA + 200 + 60 + "px";
 
 		var vEl = document.getElementById('resizer-demo'),
 		resize = new Croppie(vEl, {
@@ -198,21 +200,23 @@ function getMeta(varA, varB) {
 
 function popupResult(blob) {
 //    imgToBase64ToBlob(document.getElementById("file"));
-  swal({ 
-	  title: "", 
-	  content: true, 
-	  icon: URL.createObjectURL(blob), 
-	  allowOutsideClick: true     
-	}); 
+  document.getElementById("result").src = URL.createObjectURL(blob);
 
-  setTimeout(function() {
-    $(".sweet-alert").css("margin", function() {
-      var top = -1 * ($(this).height() / 2),
-        left = -1 * ($(this).width() / 2);
+//   swal({ 
+// 	  title: "", 
+// 	  content: true, 
+// 	  icon: URL.createObjectURL(blob), 
+// 	  allowOutsideClick: true     
+// 	}); 
 
-      return top + "px 0 0 " + left + "px";
-    });
-  }, 1);
+//   setTimeout(function() {
+//     $(".sweet-alert").css("margin", function() {
+//       var top = -1 * ($(this).height() / 2),
+//         left = -1 * ($(this).width() / 2);
+
+//       return top + "px 0 0 " + left + "px";
+//     });
+//   }, 1);
 }
 
 // function bindNavigation() {

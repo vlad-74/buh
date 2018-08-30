@@ -98,14 +98,22 @@
                     <span aria-hidden="true">&times;</span>
                 </button> -->
             </div>
-            <div id="image-body">
-                <img id="resizer-demo" class="my-image" src="" />
+            <div class="modal-body">
+                <h5>Выберите область, которая будет показываться. Если изображение ориентировано неправильно, фотографию можно повернуть.</h5>
+                <div style="display: flex">
+                    <div id="image-body">
+                        <img id="resizer-demo" class="my-image" src="" />
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <img id="result" class="" src="./images/avatar.png" />
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" onclick="canselFoto()">Отмена</button>
+                <button class="btn btn-secondary" data-dismiss="modal" onclick="canselFoto()">Назад</button>
                 <button class="btn btn-secondary resizer-rotate" >Повернуть</button>
                 <button class="btn btn-secondary resizer-result">Результат</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="attachmentFoto()">Прикрепить</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="attachmentFoto()">Готово</button>
             </div>
         </div>
 
