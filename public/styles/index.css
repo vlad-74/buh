@@ -336,6 +336,10 @@ p {
   width: 32%;
 }
 
+.positionA .frm-ctrl{
+  width: 32%;
+}
+
 .form-control-focus {
   border: 2px solid #fbd77c;
   box-shadow: inset 0 1px 1px rgba(251,215,124,0.075), 0 0 18px rgba(251,215,124,0.6);
