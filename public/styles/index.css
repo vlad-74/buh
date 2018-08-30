@@ -18,7 +18,7 @@
   width: 100%;
   height: 500px;
   left: 0%;
-  top: 56%;
+  top: 55.5%;
 }
 
 .history{
@@ -147,15 +147,28 @@ p {
   font-weight: bold;
 }
 
+#image-body{
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+#resizer-demo{
+  /* max-width: 100%;
+  max-height: 100%; */
+}
+
 #span-plus {
   position: absolute; 
-  left: 790px;
-  top: 135px;
-  padding: 2px 8px;
-  background: #000;
-  border-radius: 50%;
-  color: #fff;
+  left: 788px;
+  top: 140px;
+  background-image:url('../images/black-circle.png');
+  background-repeat:no-repeat;
+  background-size: 50%;
   cursor: pointer;
+  height: 30px; 
+  width: 30px;
+
 }
 #div-txt {
   position: absolute; 
@@ -196,7 +209,7 @@ p {
 }
 
 .btn-submit{
-  height: 92px; 
+  height: 94px; 
   width: 347px;
   background-color: transparent;
   background-image:url('../images/TELL.png');
@@ -217,6 +230,7 @@ p {
   background-color: transparent;
   background-image:url('../images/add_photo.png');
   background-repeat:no-repeat;
+  background-size: 90%;
   border:none;
   line-height:50px;
   position: absolute; 
@@ -243,6 +257,23 @@ p {
 }
 .btn-sistem:hover{
   background-image:url('../images/TRY_SISTEM_ON.png');
+}
+
+.btn-con{
+  height: 260px; 
+  width: 260px;
+  background-color: transparent;
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+  position: absolute; 
+  left: 430px;
+  top: 845px;
+  background-image:url('../images/konkurs.png');
+}
+
+.btn-con:hover{
+  background-image:url('../images/konkurs_on.png');
 }
 
 .btn-logo{
@@ -273,6 +304,7 @@ p {
   width: 90px;
   background-color: transparent;
   background-image:url('../images/BK.png');
+  background-size: 90%;
   background-repeat:no-repeat;
   border:none;
   line-height:50px;
@@ -282,6 +314,7 @@ p {
   width: 90px;
   background-color: transparent;
   background-image:url('../images/Fb.png');
+  background-size: 90%;
   background-repeat:no-repeat;
   border:none;
   line-height:50px;
@@ -291,6 +324,7 @@ p {
   width: 90px;
   background-color: transparent;
   background-image:url('../images/O.png');
+  background-size: 90%;
   background-repeat:no-repeat;
   border:none;
   line-height:50px;
@@ -300,6 +334,7 @@ p {
   width: 90px;
   background-color: transparent;
   background-image:url('../images/Whatsapp.png');
+  background-size: 90%;  
   background-repeat:no-repeat;
   border:none;
   line-height:50px;
@@ -323,7 +358,7 @@ p {
   font-weight: bold;
 }
 
-.form-control:focus {
+.positionA .form-control:focus:not(.is-invalid) {
   border: 2px solid #fbd77c;
   box-shadow: inset 0 1px 1px rgba(251,215,124,0.075), 0 0 18px rgba(251,215,124,0.6);
 }
@@ -340,8 +375,8 @@ p {
   width: 32%;
 }
 
-.form-control-focus {
-  border: 2px solid #fbd77c;
+.positionA .form-control:focus .is-invalid{
+  border: 2px solid red;
   box-shadow: inset 0 1px 1px rgba(251,215,124,0.075), 0 0 18px rgba(251,215,124,0.6);
 }
 

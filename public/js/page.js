@@ -90,7 +90,7 @@ function canselFoto(){
 	$("#file")[0].value = "";
 	$("div.croppie-container").remove();
 
-	var m = document.createElement('div');
+	var m = document.createElement("img");
 	m.id = "resizer-demo";
 	document.getElementById("image-body").appendChild(m);
 
@@ -118,8 +118,12 @@ function fixBinary(bin) {
 function getMeta(varA, varB) {
 	if (typeof varB !== 'undefined') {
 		var name2 = document.getElementById("file");
+
 		var mc = document.getElementsByClassName("modal-content");
 		mc[1].style.minWidth = varA + 60 + "px";
+
+		var md = document.getElementsByClassName("modal-dialog modal-lg");
+		md[0].style.minWidth = varA + 60 + "px";
 
 		var vEl = document.getElementById('resizer-demo'),
 		resize = new Croppie(vEl, {
@@ -211,19 +215,19 @@ function popupResult(blob) {
   }, 1);
 }
 
-function bindNavigation() {
-	var $html = $('html');
-	$('nav a').on('click', function (ev) {
-		var lnk = $(ev.currentTarget),
-			href = lnk.attr('href'),
-			targetTop = $('a[name=' + href.substring(1) + ']').offset().top;
+// function bindNavigation() {
+// 	var $html = $('html');
+// 	$('nav a').on('click', function (ev) {
+// 		var lnk = $(ev.currentTarget),
+// 			href = lnk.attr('href'),
+// 			targetTop = $('a[name=' + href.substring(1) + ']').offset().top;
 
-		$html.animate({ scrollTop: targetTop });
-		ev.preventDefault();
-	});
-}
+// 		$html.animate({ scrollTop: targetTop });
+// 		ev.preventDefault();
+// 	});
+// }
 
-bindNavigation();
+// bindNavigation();
 
 function send() {
 	document.getElementById("btn-photo").style.pointerEvents = "none";
@@ -272,18 +276,43 @@ function addPost(element){
 }
 
 function validForm() {
+	var email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+	var num_regex = /^[0-9]/i;
+	var typeError;
+
 	var array = [0,2,3];
 	var er = false;
 	for (i = 0; i < array.length; i++) {
 		var j = array[i];
+
 		if (
 			!document.forms[0][j].validity.valid || 
-			!document.forms[0][j].value.trim().length
+			!document.forms[0][j].value.trim().length ||
+			(j === 3 && !email_regex.test(document.forms[0][j].value))
 		) {
-      er = true;
-      document.forms[0][j].focus();
-      document.getElementById("error").style.display = "block";
-    } 
+			er = true;
+			document.forms[0][j].focus();
+			
+			document.forms[0][j].classList.add("is-invalid");
+
+			typeError = document.getElementById("error");
+
+			console.log("111", document.forms);
+			
+			if (j === 3 && !email_regex.test(document.forms[0][j].value) && document.forms[0][j].value.trim().length ){
+				typeError.innerText = "Не корректный адрес";
+			} else if (j === 3){
+				typeError.innerText = "Укажите почту";
+			}
+			if (j === 2) {
+               typeError.innerText = "Заполните поле Имя и Фамилия";
+			}
+			if (j === 0) {
+				typeError.innerText = "Добавьте свою историю";
+			}
+
+			typeError.style.display = "block";
+		} 
 	}
 
 	if (!er) {
@@ -294,12 +323,21 @@ function validForm() {
 }
 
 function cleanError(){
+	var array = [0, 2, 3];
 	if (document.getElementById("error")){
 		document.getElementById("error").style.display = "none";
+		for (i = 0; i < array.length; i++) {
+			var j = array[i];
+			document.forms[0][j].classList.remove("is-invalid");
+		}
 	}
 }
 
 document.addEventListener('DOMContentLoaded', function () { // Аналог $(document).ready(function(){
+	$("#name1").bind("keyup blur", function() {
+		var node = $(this);
+		node.val(node.val().replace(/[^a-z ]/g, ""));
+	});
 	viewPosts();
 });
 
