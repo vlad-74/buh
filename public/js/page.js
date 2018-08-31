@@ -348,13 +348,6 @@ function cleanError(){
 	}
 }
 
-// $('#myModal').click(function (e) {
-// 	var $target = $(e.target);
-// 	console.log($target);
-// 	// if (!$target.is("select")) { $(this).hide() };
-// });
-
-
 
 document.addEventListener('DOMContentLoaded', function () { // Аналог $(document).ready(function(){
 	$("#name1").bind("keyup blur", function() {
