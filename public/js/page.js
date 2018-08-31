@@ -54,7 +54,8 @@ var posts = [
 function changeText(e,id) {
 	if (e.target.className === "btn btn-read") {
 		e.target.className = "btn btn-hide";
-    	document.getElementById(id).setAttribute("class", "");
+		document.getElementById(id).setAttribute("class", "");
+		document.getElementById(id).style.minHeight = "50px";
 	} else {
 			e.target.className = "btn btn-read";
 			document.getElementById(id).setAttribute("class", "post-text");
