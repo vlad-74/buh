@@ -122,7 +122,10 @@ function getMeta(varA, varB) {
 		var name2 = document.getElementById("file");
 
 		var mc = document.getElementsByClassName("modal-content");
-		mc[1].style.minWidth = varA + 60 + "px";
+		mc[1].style.minWidth = varA + 200 + 60 + "px";
+
+		document.getElementById("image-body").style.maxWidth = varA;
+		document.getElementById("image-body").style.maxHeight = varB;
 
 		var md = document.getElementsByClassName("modal-dialog modal-lg");
 		md[0].style.minWidth = varA + 200 + 60 + "px";
