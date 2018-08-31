@@ -164,6 +164,14 @@ function getMeta(varA, varB) {
 		});
 
 		$("#modalEdit").modal("show");
+
+		document.querySelector("#modalEdit").addEventListener("click", function (ev) {
+			var target = $(ev.target);
+			if (target[0].id === "modalEdit"){
+				canselFoto();
+			}
+		});
+
 	} else {
 		var img = new Image();
 		img.src = varA;
@@ -339,6 +347,14 @@ function cleanError(){
 		}
 	}
 }
+
+// $('#myModal').click(function (e) {
+// 	var $target = $(e.target);
+// 	console.log($target);
+// 	// if (!$target.is("select")) { $(this).hide() };
+// });
+
+
 
 document.addEventListener('DOMContentLoaded', function () { // Аналог $(document).ready(function(){
 	$("#name1").bind("keyup blur", function() {
