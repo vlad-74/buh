@@ -340,7 +340,7 @@ function cleanError(){
 document.addEventListener('DOMContentLoaded', function () { // Аналог $(document).ready(function(){
 	$("#name1").bind("keyup blur", function() {
 		var node = $(this);
-		node.val(node.val().replace(/[^a-zA-Zа-яА-Я]/g, ""));
+		node.val(node.val().replace(/[^a-zA-Zа-яА-Я\h\v\s]/g, ""));
 	});
 	viewPosts();
 });
