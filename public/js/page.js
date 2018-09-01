@@ -89,15 +89,31 @@ function attachmentFoto(){
 function canselFoto(){
 	$("#resizer-demo")[0].src = "";
 	$("#file")[0].value = "";
-	$("div.croppie-container").remove();
 
-	var m = document.createElement("img");
-	m.id = "resizer-demo";
-	document.getElementById("image-body").appendChild(m);
+	$("div.croppie-container").remove();
+	$("div#result-wrap").remove();
+	
+	var d1 = document.createElement("div");
+	d1.id = "image-body";
+	document.getElementById("image-wrap").appendChild(d1);
+
+	var m1 = document.createElement("img");
+	m1.id = "resizer-demo";
+	document.getElementById("image-body").appendChild(m1);
+
+	var d2 = document.createElement("div");
+	d2.id = "result-wrap";
+	document.getElementById("image-wrap").appendChild(d2);
+
+	var m2 = document.createElement("img");
+	m2.id = "result";
+	document.getElementById("result-wrap").appendChild(m2);
 
 	document.getElementById("result").src = '../images/avatar.png';
+	
 
 }
+
 function output(node) {
 	var existing = $("#result .resizer-result");
 	if (existing.length > 0) {
@@ -122,21 +138,21 @@ function getMeta(varA, varB) {
 	if (typeof varB !== 'undefined') {
 		var name2 = document.getElementById("file");
 
-		var vEl = document.getElementById('resizer-demo'),
+		var vEl = document.getElementById("image-body"), //div
 		resize = new Croppie(vEl, {
 			enableExif: true,
 			viewport: {
-				width: 280,
-				height: 280,
+			width: 280,
+			height: 280
 			},
 			boundary: {
-				width: 300,
-				height: 300
+			width: 300,
+			height: 300
 			},
 			showZoomer: false,
 			enableResize: true,
 			enableOrientation: true,
-			mouseWheelZoom: 'ctrl',
+			mouseWheelZoom: "ctrl"
 		});
 		resize.bind({url: readURL(name2)});
 
@@ -146,6 +162,7 @@ function getMeta(varA, varB) {
 		});
 
 		vEl.addEventListener('update', function (ev) {
+			// console.log('!!!!!!!');
 			// resize.zoom = 0;
 		});
 
@@ -162,9 +179,8 @@ function getMeta(varA, varB) {
 		});
 
 		$("#modalEdit").modal("show");
-		setTimeout(() => {
-			document.querySelector(".resizer-result").click();
-		}, 500);
+		
+		setTimeout(function () { document.querySelector(".resizer-result").click() }, 500);
 		
 
 		document.querySelector("#modalEdit").addEventListener("click", function (ev) {
@@ -213,23 +229,9 @@ function getMeta(varA, varB) {
 
 function popupResult(blob) {
 //    imgToBase64ToBlob(document.getElementById("file"));
-  document.getElementById("result").src = URL.createObjectURL(blob);
-
-//   swal({ 
-// 	  title: "", 
-// 	  content: true, 
-// 	  icon: URL.createObjectURL(blob), 
-// 	  allowOutsideClick: true     
-// 	}); 
-
-//   setTimeout(function() {
-//     $(".sweet-alert").css("margin", function() {
-//       var top = -1 * ($(this).height() / 2),
-//         left = -1 * ($(this).width() / 2);
-
-//       return top + "px 0 0 " + left + "px";
-//     });
-//   }, 1);
+	if (blob){
+		document.getElementById("result").src = URL.createObjectURL(blob);
+	} 
 }
 
 // function bindNavigation() {
