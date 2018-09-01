@@ -122,36 +122,41 @@ function getMeta(varA, varB) {
 	if (typeof varB !== 'undefined') {
 		var name2 = document.getElementById("file");
 
+		var mc = document.getElementsByClassName("modal-content");
+		mc[1].style.minWidth = varA + 200 + 60 + "px";
+
+		document.getElementById("image-body").style.maxWidth = varA;
+		document.getElementById("image-body").style.maxHeight = varB;
+
+		var md = document.getElementsByClassName("modal-dialog modal-lg");
+		md[0].style.minWidth = varA + 200 + 60 + "px";
+		
+
+
 		var vEl = document.getElementById('resizer-demo'),
 		resize = new Croppie(vEl, {
-			enableExif: true,
-			viewport: {
-				width: 280,
-				height: 280,
-			},
-			boundary: {
-				width: 300,
-				height: 300
-			},
+			// enableExif: true,
+			viewport: { width: varA - 40, height: varB - 40 },
+			boundary: { width: varA, height: varB },
 			showZoomer: false,
 			enableResize: true,
 			enableOrientation: true,
-			mouseWheelZoom: 'ctrl',
+			mouseWheelZoom: 'ctrl'
 		});
 		resize.bind({url: readURL(name2)});
 
+
 		document.querySelector('.resizer-rotate').addEventListener('click', function (ev) {
-			resize.bind();
-			resize.rotate(-90);
+			resize.rotate(parseInt("90degrees"));
 		});
 
 		vEl.addEventListener('update', function (ev) {
-			// resize.zoom = 0;
+			resize.zoom = 0;
 		});
 
 		document.querySelector('.resizer-result').addEventListener('click', function (ev) {
-			resize.bind();
 			size = "viewport";
+			resize.bind();
 			resize.result({
 				type: "blob",
 				size: size,
@@ -162,10 +167,6 @@ function getMeta(varA, varB) {
 		});
 
 		$("#modalEdit").modal("show");
-		setTimeout(() => {
-			document.querySelector(".resizer-result").click();
-		}, 500);
-		
 
 		document.querySelector("#modalEdit").addEventListener("click", function (ev) {
 			var target = $(ev.target);
