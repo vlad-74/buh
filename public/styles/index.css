@@ -1,5 +1,5 @@
 .content{
-  /* max-width: 1200px; */
+  max-width: 1200px;
   width: 100%;
   margin: auto;
   /* padding: 20px 40px; */
@@ -11,7 +11,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 1690px;
-  min-width: 800px;
+  /* min-width: 800px; */
 }
 .positionA{
   position: absolute;

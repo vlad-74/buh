@@ -281,7 +281,6 @@ function viewPosts() {
 }
 
 function addPosts (result) {
-
 	for (var i = 0; i < posts.length; i++) {
 		const element = posts[i];
 		addPost(element);
