@@ -1,5 +1,5 @@
 .content{
-  max-width: 1200px;
+  /* max-width: 1200px; */
   width: 100%;
   margin: auto;
   /* padding: 20px 40px; */
@@ -18,7 +18,7 @@
   width: 100%;
   height: 500px;
   left: 0%;
-  top: 55.5%;
+  top: 56.5%;
 }
 
 .history{
@@ -59,6 +59,10 @@
   max-height: 150px;
   max-width: 150px;
   overflow: hidden;
+}
+
+.photo > img:hover {
+  cursor: zoom-in;
 }
 
 .full-name{
@@ -258,32 +262,16 @@ p {
   background-image:url('../images/add_photo_on.png');
 }
 
-.btn-sistem{
-  height: 260px; 
-  width: 260px;
-  background-color: transparent;
-  background-image:url('../images/TRY_SISTEM.png');
-  background-repeat:no-repeat;
-  border:none;
-  line-height:50px;
-  position: absolute; 
-  left: 87px;
-  top: 52px;
-}
-.btn-sistem:hover{
-  background-image:url('../images/TRY_SISTEM_ON.png');
-}
-
 .btn-con{
-  height: 260px; 
-  width: 260px;
+  height: 60px; 
+  width: 180px;
   background-color: transparent;
   background-repeat:no-repeat;
   border:none;
   line-height:50px;
   position: absolute; 
   left: 430px;
-  top: 845px;
+  top: 852px;
   background-image:url('../images/konkurs.png');
 }
 
@@ -401,4 +389,161 @@ p {
 
 .modal-open .modal {
   overflow: auto;
+}
+
+.menu{
+  position: absolute;
+  height: 250px;
+  width: 350px;
+  left: 0px;
+  top: 30px;
+}
+
+.menu-btn{
+  margin: auto;
+  height: 100px; 
+  width: 100px;
+  background-color: transparent;
+  background-image:url('../images/MENU.png');
+  background-size: 90%;
+  background-repeat:no-repeat;
+  border:none;
+  cursor: pointer;
+}
+.menu-btn:hover{
+  background-image:url('../images/MENU_on.png') 
+}
+
+#menu-btn-list{
+  width: 400px;
+  height: 150px;
+  padding-left: 80px;
+  position: relative;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.menu-list1{
+  height: 70px; 
+  width: 250px;
+  background-image: url('../images/menu1.png');
+  background-repeat: no-repeat;
+  background-size: 80%;
+  position: absolute;
+  top: -20px;
+}
+
+.menu-list2{
+  height: 70px; 
+  width: 250px;
+  background-image: url('../images/menu2.png');
+  background-repeat: no-repeat;
+  background-size: 80%;
+  position: absolute;
+  top: 30px;
+}
+
+.menu-list3{
+  height: 70px; 
+  width: 250px;
+  background-image: url('../images/menu3.png');
+  background-repeat: no-repeat;
+  background-size: 80%;
+  position: absolute;
+  top: 80px;
+}
+
+.menu-list1:hover{
+  background-image: url('../images/menu1_on.png');
+  background-size: 70%;
+}
+.menu-list2:hover{
+  background-image: url('../images/menu2_on.png');
+  background-size: 70%;
+}
+.menu-list3:hover{
+  background-image: url('../images/menu3_on.png');
+  background-size: 70%;
+}
+
+/* ================================================== */
+.wibro{
+  height: 150px; 
+  width: 100px;
+  background-color: transparent;
+  background-image:url('../images/ARROW.png');
+  left: 667px;
+  top: 450px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+.wibro:hover {
+  -webkit-animation: 0.3s tremor ease-out infinite;  
+  animation: 0.3s tremor ease-out infinite;    
+}
+
+@-webkit-keyframes tremor {
+  0%, 25% {
+      top: 440px;
+      -webkit-transform: translateY(-4%);
+      transform: translateY(-4%);
+  }
+  50%, 100% {
+      top: 450px;
+      -webkit-transform: translateY(4%);
+      transform: translateY(4%);
+  }
+}
+
+@-moz-keyframes tremor {
+  0%, 25% {
+      top: 440px;
+      -webkit-transform: translateY(-4%);
+      transform: translateY(-4%);
+  }
+  50%, 100% {
+      top: 450px;
+      -webkit-transform: translateY(4%);
+      transform: translateY(4%);
+  }
+}
+
+@-ms-keyframes tremor {
+  0%, 25% {
+      top: 440px;
+      -webkit-transform: translateY(-4%);
+      transform: translateY(-4%);
+  }
+  50%, 100% {
+      top: 450px;
+      -webkit-transform: translateY(4%);
+      transform: translateY(4%);
+  }
+}
+@-o-keyframes tremor {
+  0%, 25% {
+      top: 440px;
+      -webkit-transform: translateY(-4%);
+      transform: translateY(-4%);
+  }
+  50%, 100% {
+      top: 450px;
+      -webkit-transform: translateY(4%);
+      transform: translateY(4%);
+  }
+}
+
+@keyframes tremor {
+  0%, 25% {
+      top: 440px;
+      -webkit-transform: translateY(-4%);
+      transform: translateY(-4%);
+  }
+  50%, 100% {
+      top: 450px;
+      -webkit-transform: translateY(4%);
+      transform: translateY(4%);
+  }
 }

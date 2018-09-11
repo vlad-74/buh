@@ -1,4 +1,5 @@
 var fotoPath;
+var menuVisible = false;
 // document.getElementById("span-plus").addEventListener("click", getFoto);
 var txt = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' +
 'Alias nesciunt aliquam sint aliquid enim quisquam amet, minus ea sed neque perferendis corrupti'
@@ -287,10 +288,26 @@ function addPosts (result) {
 	}
 }
 
+function fullFoto(e){
+	swal({
+		icon: e.target.src, 
+		allowOutsideClick: true
+	});
+
+	setTimeout(function () {
+		$(".sweet-alert").css("margin", function () {
+			var top = -1 * ($(this).height() ),
+				left = -1 * ($(this).width() );
+
+			return top + "px 0 0 " + left + "px";
+		});
+	}, 1);
+}
+
 function addPost(element){
 	var m = document.createElement('div');
 	m.className = 'post';
-	m.innerHTML = "\n\t\t<div class='photo'>\n\t\t\t<img alt=\"\" src=" + (element.img || "") + ">\n        </div>\n\t\t<div class='post-body'>\n\t\t\t<div class=\"full-name\">\n\t\t\t\t<h2>" + (element.fio || "") + " </h2>\n\t\t\t</div>\n\t\t\t<div id = \"" + element.id + "\" class='post-text'>\n\t\t\t" + (element.txt || "") + " \n\t\t\t</div>\n\t\t\t<div class='post-btn'>\n\t\t\t\t<button class=\"btn btn-read\" onclick=\"changeText(event, " + element.id + ")\"></button>\n\t\t\t</div>\n        </div>\n        ";
+	m.innerHTML = "\n\t\t<div class='photo'>\n\t\t\t<img onclick=\"fullFoto(event)\" alt=\"\" src=" + (element.img || "") + " >\n        </div>\n\t\t<div class='post-body'>\n\t\t\t<div class=\"full-name\">\n\t\t\t\t<h2>" + (element.fio || "") + " </h2>\n\t\t\t</div>\n\t\t\t<div id = \"" + element.id + "\" class='post-text'>\n\t\t\t" + (element.txt || "") + " \n\t\t\t</div>\n\t\t\t<div class='post-btn'>\n\t\t\t\t<button class=\"btn btn-read\" onclick=\"changeText(event, " + element.id + ")\"></button>\n\t\t\t</div>\n        </div>\n        ";
 	document.getElementById('posts').appendChild(m);
 }
 
@@ -333,13 +350,22 @@ function validForm() {
 			typeError.style.display = "block";
 		} 
 	}
-
 	if (!er) {
 		document.getElementById("error").style.display = "none";
 		send();
 	} 
-
 }
+
+function visibleMenu(){
+	if (!menuVisible) {
+		document.getElementById("menu-btn-list").style.display = "block";
+		menuVisible = true;
+	} else {
+		document.getElementById("menu-btn-list").style.display = "none";
+		menuVisible = false;
+	}
+};
+
 
 function cleanError(){
 	var array = [0, 2, 3];
