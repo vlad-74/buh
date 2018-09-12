@@ -1,3 +1,5 @@
+@import "media.css";
+
 .content{
   max-width: 1200px;
   width: 100%;
@@ -480,70 +482,77 @@ p {
 }
 
 .wibro:hover {
-  -webkit-animation: 0.3s tremor ease-out infinite;  
-  animation: 0.3s tremor ease-out infinite;    
+  -webkit-animation: 0.9s tremor ease-in-out infinite;  
+  animation: 0.9s tremor ease-in-out infinite;    
 }
 
 @-webkit-keyframes tremor {
   0%, 25% {
-      top: 440px;
-      -webkit-transform: translateY(-4%);
-      transform: translateY(-4%);
+      top: 430px;
+      -webkit-transform: translateY(-18%);
+      transform: translateY(-18%);
   }
   50%, 100% {
       top: 450px;
-      -webkit-transform: translateY(4%);
-      transform: translateY(4%);
+      -webkit-transform: translateY(18%);
+      transform: translateY(18%);
   }
 }
 
 @-moz-keyframes tremor {
   0%, 25% {
-      top: 440px;
-      -webkit-transform: translateY(-4%);
-      transform: translateY(-4%);
+      top: 430px;
+      -webkit-transform: translateY(-18%);
+      transform: translateY(-18%);
   }
   50%, 100% {
       top: 450px;
-      -webkit-transform: translateY(4%);
-      transform: translateY(4%);
+      -webkit-transform: translateY(18%);
+      transform: translateY(18%);
   }
 }
 
 @-ms-keyframes tremor {
   0%, 25% {
-      top: 440px;
-      -webkit-transform: translateY(-4%);
-      transform: translateY(-4%);
+      top: 430px;
+      -webkit-transform: translateY(-18%);
+      transform: translateY(-18%);
   }
   50%, 100% {
       top: 450px;
-      -webkit-transform: translateY(4%);
-      transform: translateY(4%);
+      -webkit-transform: translateY(18%);
+      transform: translateY(18%);
   }
 }
 @-o-keyframes tremor {
   0%, 25% {
-      top: 440px;
-      -webkit-transform: translateY(-4%);
-      transform: translateY(-4%);
+      top: 430px;
+      -webkit-transform: translateY(-18%);
+      transform: translateY(-18%);
   }
   50%, 100% {
       top: 450px;
-      -webkit-transform: translateY(4%);
-      transform: translateY(4%);
-  }
+      -webkit-transform: translateY(18%);
+      transform: translateY(18%);
+  } 
 }
 
 @keyframes tremor {
   0%, 25% {
-      top: 440px;
-      -webkit-transform: translateY(-4%);
-      transform: translateY(-4%);
+      top: 380px;
+      -webkit-transform: translateY(-8%);
+      transform: translateY(-8%);
   }
   50%, 100% {
       top: 450px;
-      -webkit-transform: translateY(4%);
-      transform: translateY(4%);
+      -webkit-transform: translateY(8%);
+      transform: translateY(8%);
   }
+}
+
+.mob{
+  display: none;
+}
+.media-css{
+  display: none;
 }
