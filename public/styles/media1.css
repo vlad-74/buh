@@ -1,4 +1,4 @@
-@media (min-width: 1100px) and (max-width: 1200px) {
+@media (min-width: 1000px) and (max-width: 1099px) {
   .wrap {
     background-image: url("");
     min-height: 100%;
@@ -12,7 +12,7 @@
   .btn-logo{
     left: 80%;
     top: 1.5%;
-    background-size: 90%;
+    background-size: 80%;
   }
 
   .menu{
@@ -20,7 +20,7 @@
     top: 1.5%;
   }
   .menu-btn{
-    background-size: 90%;
+    background-size: 80%;
     margin: 0 0 0 40px;
   }
 
@@ -28,19 +28,19 @@
     padding-left: 10px;
   }
   .menu-list1{
-    background-size: 90%;
+    background-size: 80%;
   }
   .menu-list2{
-    background-size: 90%;
+    background-size: 80%;
   }
   .menu-list3{
-    background-size: 90%;
+    background-size: 80%;
   }
 
   .wibro{
     left: 60%;
     top: 25%;
-    background-size: 90%;
+    background-size: 80%;
   }
 
   .btn-con{
@@ -57,35 +57,57 @@
   }
 
   .email1 {
-    top: 255px;
+    top: 240px;
+  }
+  .email {
+    top: 270px;
+    
   }
 
-  .email {
-    top: 285px;
-  }
+  .name, .email{
+    height: 20px;
+  } 
 
   .invalid-feedback{
-    top:325px;
+    top: 290px;
     left: 42%;
   }
 
   #span-plus{
-    left: 68%;
+    left: 70%;
   }
 
   #btn-photo{
     left: 20%;
     top: 71%;
-    background-size: 90%;
+    background-size: 70%;
   }
+  
   .media{
-    left: 15%;
+    left: 14%;
     top: 84%;
-    background-size: 90%;
+    width: 300px;
   }
+
+  .btn-vk{
+    background-size: 80%;
+  }
+  .btn-fb{
+    background-size: 80%;
+  }
+  .btn-ok{
+    background-size: 80%;
+  }
+  .btn-wp{
+    background-size: 80%;  
+  }
+
   .div-sub{
     left: 50%;
-    top: 72%;
-    background-size: 90%;
+    top: 65%;
   }
+  .btn-submit{
+    background-size: 70%;
+  }
+
 }
