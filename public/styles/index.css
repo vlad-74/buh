@@ -15,12 +15,340 @@
   min-height: 1690px;
   /* min-width: 800px; */
 }
+
+/* ============================================== */
+.menu{
+  position: absolute;
+  height: 12%;
+  width: 20%;
+  left: 1%;
+  top: 1%;
+}
+
+.menu-btn{
+  margin: auto;
+  height: 36%; 
+  width: 32%;
+  background-color: transparent;
+  background-image:url('../images/MENU.png');
+  background-size: 100%;
+  background-repeat:no-repeat;
+  border:none;
+  cursor: pointer;
+}
+.menu-btn:hover{
+  background-image:url('../images/MENU_on.png') 
+}
+
+#menu-btn-list{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-left: 5%;
+  flex-direction: column;
+  justify-content: flex-start;
+  display: none;
+  transform: rotate(0.98turn);
+}
+
+.menu-list1{
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 100%;
+}
+
+.menu-list2{
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 5px
+}
+
+.menu-list3{
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 5px
+}
+
+.menu-list1:hover{
+  background: #000;
+  text-decoration: none;
+  color: white;
+}
+.menu-list2:hover{
+  background: #000;
+  text-decoration: none;
+  color: white;
+}
+.menu-list3:hover{
+  background: #000;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-logo{
+  height: 5%;
+  width: 18%;
+  background-color: transparent;
+  background-image:url('../images/logo-black.png');
+  background-repeat:no-repeat;
+  border:none;
+  position: absolute; 
+  left: 70%;
+  top: 3%;
+}
+
+#wibro{
+  height: 10%;
+  width: 9%;
+  background-color: transparent;
+  background-image:url('../images/ARROW.png');
+  left: 55%;
+  top: 27%;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+.btn-con{
+  height: 3%; 
+  width: 15%;
+  background-color: transparent;
+  background-repeat:no-repeat;
+  border:none;
+  position: absolute; 
+  left: 37%;
+  top: 50.5%;
+  background-image:url('../images/konkurs.png');
+  background-size: 90%;
+}
+
+.btn-con:hover{
+  background-image:url('../images/konkurs_on.png');
+}
+
+#btn-photo{
+  height: 8%;
+  width: 12%;
+  background-color: transparent;
+  background-image:url('../images/add_photo.png');
+  background-repeat:no-repeat;
+  background-size: 100%;
+  border:none;
+  position: absolute; 
+  left: 22%;
+  top: 71%;
+  cursor: pointer;
+}
+
+#btn-photo:hover{
+  background-image:url('../images/add_photo_on.png');
+}
+
+
+.media{
+    position: absolute;
+    left: 16%;
+    top: 84%;
+    display: flex;
+    width: 31%;
+    height: 5%;
+    transform: rotate(0.98turn);
+}
+
+.btn-vk{
+  height: 90px; 
+  width: 90px;
+  background-color: transparent;
+  background-image:url('../images/BK.png');
+  background-size: 90%;
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+}
+.btn-fb{
+  height: 90px; 
+  width: 90px;
+  background-color: transparent;
+  background-image:url('../images/Fb.png');
+  background-size: 90%;
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+}
+.btn-ok{
+  height: 90px; 
+  width: 90px;
+  background-color: transparent;
+  background-image:url('../images/O.png');
+  background-size: 90%;
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+}
+.btn-wp{
+  height: 90px; 
+  width: 90px;
+  background-color: transparent;
+  background-image:url('../images/Whatsapp.png');
+  background-size: 90%;  
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+}
+
+.btn-vk:hover{
+  background-image:url('../images/BK_on.png');
+}
+.btn-fb:hover{
+  background-image:url('../images/Fb_on.png');  
+}
+.btn-ok:hover{
+  background-image:url('../images/O_on.png'); 
+}
+.btn-wp:hover{
+  background-image:url('../images/Whatsapp_on.png'); 
+}
+
+.btn-submit{
+  position: absolute; 
+  left: 54%;
+  top: 80.5%;
+  height: 7%;
+  width: 25%;
+  background-color: transparent;
+  background-image:url('../images/TELL.png');
+  background-repeat:no-repeat;
+  background-size: 100%;
+  border:none;
+  line-height:50px;
+}
+
+.btn-submit:hover {
+  background-image:url('../images/TELL_ON.png');
+}
+
+/* ---------------------------------------------- */
+/* 
+.form{
+  position: relative;
+} */
+
+.txt1 {
+  position: absolute; 
+  left: 46%;
+  top: 2%;
+}
+
+.txt {
+  position: absolute; 
+  left: 46%;
+  top: 10.0%;
+  font-size: 100%;
+  width: 32%;
+  height: 20%;
+  z-index: 10;
+}
+
+#foto-txt{
+  position: absolute; 
+  left: 46%;
+  top: 31%;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+#span-plus {
+  position: absolute; 
+  left: 66%;
+  top: 33%;
+  background-image:url('../images/black-circle.png');
+  background-repeat:no-repeat;
+  background-size: 50%;
+  cursor: pointer;
+  height: 30px; 
+  width: 30px;
+}
+
+#div-txt {
+  position: absolute; 
+  left: 46%;
+  top: 38%;
+  font-weight: normal;
+  color: #b6b6b6;
+  font-size: 100%;
+}
+
+
+.name1 {
+  position: absolute; 
+  left: 46%;;
+  top: 48%;
+}
+.name {
+  position: absolute; 
+  left: 46%;
+  top: 56%;
+  font-size: 100%;
+  width: 32%;
+  height: 12%;
+}
+.email1 {
+  position: absolute; 
+  left: 46%;
+  top: 70%;
+}
+.email {
+  position: absolute; 
+  left: 46%;
+  top: 78%;
+  font-size: 100%;
+  width: 32%;
+}
+
+.invalid-feedback{
+  position: absolute; 
+  left: 43%;
+  top: 92%;
+  font-size: 1rem;
+  width: 32%;
+}
+
+
+.label {
+  font-size: 120%;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.positionA .form-control:focus:not(.is-invalid) {
+  border: 2px solid #fbd77c;
+  box-shadow: inset 0 1px 1px rgba(251,215,124,0.075), 0 0 18px rgba(251,215,124,0.6);
+}
+
+
+/* .positionA .frm-ctrl{
+  width: 32%;
+  height: 12%;
+} */
+
+.positionA .form-control:focus .is-invalid{
+  border: 2px solid red;
+  box-shadow: inset 0 1px 1px rgba(251,215,124,0.075), 0 0 18px rgba(251,215,124,0.6);
+}
+
+/* ============================================== */
 .positionA{
   position: absolute;
   width: 100%;
-  height: 500px;
+  height: 23%;
   left: 0%;
-  top: 56.5%;
+  top: 55.5%;
 }
 
 .history{
@@ -35,7 +363,7 @@
   color: #878787;
 }
 .footer h6{
-  margin: auto 0 auto 200px;
+  margin: auto 0 auto 20%;
 }
 
 #posts{
@@ -127,31 +455,6 @@
   display: none;
 }
 
-.form{
-  position: relative;
-}
-
-.txt1 {
-  position: absolute; 
-  left: 555px;
-}
-
-.txt {
-  position: absolute; 
-  left: 555px;
-  top: 30px;
-  font-size: 20px;
-  width: 32%;
-  z-index: 10;
-}
-
-p {
-  position: absolute; 
-  left: 555px;
-  top: 130px;
-  font-size: 20px;
-  font-weight: bold;
-}
 
 #image-body{
   /* max-width: 100%; */
@@ -179,309 +482,12 @@ p {
   max-height: 100%; */
 }
 
-#span-plus {
-  position: absolute; 
-  left: 788px;
-  top: 140px;
-  background-image:url('../images/black-circle.png');
-  background-repeat:no-repeat;
-  background-size: 50%;
-  cursor: pointer;
-  height: 30px; 
-  width: 30px;
-
-}
-#div-txt {
-  position: absolute; 
-  left: 555px;
-  top: 160px;
-  font-weight: normal;
-  color: #b6b6b6;
-}
-.name1 {
-  position: absolute; 
-  left: 555px;
-  top: 190px;
-}
-.name {
-  position: absolute; 
-  left: 555px;
-  top: 220px;
-  font-size: 20px;
-  width: 32%;
-}
-.email1 {
-  position: absolute; 
-  left: 555px;
-  top: 270px;
-}
-.email {
-  position: absolute; 
-  left: 555px;
-  top: 300px;
-  font-size: 20px;
-  width: 32%;
-}
-
-.div-sub{
-  position: absolute; 
-  left: 600px;
-  top: 390px;
-}
-
-.btn-submit{
-  height: 94px; 
-  width: 347px;
-  background-color: transparent;
-  background-image:url('../images/TELL.png');
-  background-repeat:no-repeat;
-  background-size: 80%;
-  border:none;
-  line-height:50px;
-
-}
-
-.btn-submit:hover {
-  background-image:url('../images/TELL_ON.png');
-}
-
-#btn-photo{
-  height: 160px; 
-  width: 160px;
-  background-color: transparent;
-  background-image:url('../images/add_photo.png');
-  background-repeat:no-repeat;
-  background-size: 90%;
-  border:none;
-  line-height:50px;
-  position: absolute; 
-  left: 265px;
-  top: 1200px;
-  cursor: pointer;
-}
-
-#btn-photo:hover{
-  background-image:url('../images/add_photo_on.png');
-}
-
-.btn-con{
-  height: 60px; 
-  width: 180px;
-  background-color: transparent;
-  background-repeat:no-repeat;
-  border:none;
-  line-height:50px;
-  position: absolute; 
-  left: 430px;
-  top: 852px;
-  background-image:url('../images/konkurs.png');
-}
-
-.btn-con:hover{
-  background-image:url('../images/konkurs_on.png');
-}
-
-#sub2{
-  display: none;
-}
-
-.btn-logo{
-  height: 55px; 
-  width: 130px;
-  background-color: transparent;
-  background-image:url('../images/logo-black.png');
-  background-repeat:no-repeat;
-  border:none;
-  line-height:50px;
-  position: absolute; 
-  left: 840px;
-  top: 55px;
-}
-
-.media{
-  position: absolute; 
-  left: 170px;
-  top: 1410px;
-  display: flex;
-  width: 360px;
-  height: 95px;
-  transform: rotate(0.98turn);
-}
-
-.btn-vk{
-  height: 90px; 
-  width: 90px;
-  background-color: transparent;
-  background-image:url('../images/BK.png');
-  background-size: 90%;
-  background-repeat:no-repeat;
-  border:none;
-  line-height:50px;
-}
-.btn-fb{
-  height: 90px; 
-  width: 90px;
-  background-color: transparent;
-  background-image:url('../images/Fb.png');
-  background-size: 90%;
-  background-repeat:no-repeat;
-  border:none;
-  line-height:50px;
-}
-.btn-ok{
-  height: 90px; 
-  width: 90px;
-  background-color: transparent;
-  background-image:url('../images/O.png');
-  background-size: 90%;
-  background-repeat:no-repeat;
-  border:none;
-  line-height:50px;
-}
-.btn-wp{
-  height: 90px; 
-  width: 90px;
-  background-color: transparent;
-  background-image:url('../images/Whatsapp.png');
-  background-size: 90%;  
-  background-repeat:no-repeat;
-  border:none;
-  line-height:50px;
-}
-
-.btn-vk:hover{
-  background-image:url('../images/BK_on.png');
-}
-.btn-fb:hover{
-  background-image:url('../images/Fb_on.png');  
-}
-.btn-ok:hover{
-  background-image:url('../images/O_on.png'); 
-}
-.btn-wp:hover{
-  background-image:url('../images/Whatsapp_on.png'); 
-}
-
-.label {
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.positionA .form-control:focus:not(.is-invalid) {
-  border: 2px solid #fbd77c;
-  box-shadow: inset 0 1px 1px rgba(251,215,124,0.075), 0 0 18px rgba(251,215,124,0.6);
-}
-
-.invalid-feedback{
-  position: absolute; 
-  left: 555px;
-  top: 340px;
-  font-size: 20px;
-  width: 32%;
-}
-
-.positionA .frm-ctrl{
-  width: 32%;
-}
-
-.positionA .form-control:focus .is-invalid{
-  border: 2px solid red;
-  box-shadow: inset 0 1px 1px rgba(251,215,124,0.075), 0 0 18px rgba(251,215,124,0.6);
-}
-
 #file {
   display: none;
 }
 
 .modal-open .modal {
   overflow: auto;
-}
-
-.menu{
-  position: absolute;
-  height: 12%;
-  width: 20%;
-  left: 10px;
-  top: 30px;
-}
-
-.menu-btn{
-  margin: auto;
-  height: 100px; 
-  width: 100px;
-  background-color: transparent;
-  background-image:url('../images/MENU.png');
-  background-size: 90%;
-  background-repeat:no-repeat;
-  border:none;
-  cursor: pointer;
-}
-.menu-btn:hover{
-  background-image:url('../images/MENU_on.png') 
-}
-
-#menu-btn-list{
-  width: 100%;
-  height: 100%;
-  position: relative;
-  padding-left: 5%;
-  flex-direction: column;
-  justify-content: flex-start;
-  display: none;
-  transform: rotate(0.98turn); 
-}
-
-.menu-list1{
-  width: 100%;
-  text-align: center;
-  color: #000;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.menu-list2{
-  width: 100%;
-  text-align: center;
-  color: #000;
-  font-weight: bold;
-  margin-bottom: 5px
-}
-
-.menu-list3{
-  width: 100%;
-  text-align: center;
-  color: #000;
-  font-weight: bold;
-  margin-bottom: 5px
-}
-
-.menu-list1:hover{
-  background: #000;
-  text-decoration: none;
-  color: white;
-}
-.menu-list2:hover{
-  background: #000;
-  text-decoration: none;
-  color: white;
-}
-.menu-list3:hover{
-  background: #000;
-  text-decoration: none;
-  color: white;
-}
-
-/* ================================================== */
-#wibro{
-  height: 150px; 
-  width: 100px;
-  background-color: transparent;
-  background-image:url('../images/ARROW.png');
-  left: 667px;
-  top: 450px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  position: absolute;
 }
 
 .mob{

@@ -1,4 +1,4 @@
-@media (min-width: 1100px) and (max-width: 1200px) {
+@media (min-width: 760px) and (max-width: 1200px) {
   .wrap {
     background-image: url("");
     min-height: 100%;
@@ -9,83 +9,470 @@
     height: 100%;
   }
 
-  .btn-logo{
-    left: 80%;
-    top: 1.5%;
-    background-size: 90%;
+  #foto-txt, #span-plus{
+    display: none;
   }
+}
 
-  .menu{
-    left: 0;
-    top: 1.5%;
+@media (min-width: 760px) and (max-width: 874px) {
+  .wrap {
+    background-image: url("");
+    min-height: 100%;
   }
-  .menu-btn{
-    background-size: 90%;
-    margin: 0 0 0 40px;
-  }
-
   #menu-btn-list{
-    padding-left: 10px;
-  }
-  .menu-list1{
-    background-size: 90%;
-  }
-  .menu-list2{
-    background-size: 90%;
-  }
-  .menu-list3{
-    background-size: 90%;
+    width: 140%;
   }
 
-  .wibro{
-    left: 60%;
-    top: 25%;
-    background-size: 90%;
+  .txt1 {
+    top: 0;
   }
 
-  .btn-con{
-    left: 36%;
-    top: 50.8%;
-    background-size: 80%;
+  #div-txt {
+    top: 38%;
   }
 
-  .positionA{
-    top: 55.8%;
-  }
-  .txt1, .txt, .name1, .name, .email1, .email, p, #div-txt, .invalid-feedback{
-   left: 46%;
+  .name1 {
+    top: 46%;
   }
 
   .email1 {
-    top: 255px;
+    top: 68%;
   }
 
+}
+
+
+@media (min-width: 360px) and (max-width: 759px) {
+  .wrap {
+    background-image: url("");
+    min-height: 100%;
+  }
+
+  .media-css{
+    display: none;
+  }
+
+  .mob{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+/* ============================================== */
+.menu{
+  position: absolute;
+  height: 12%;
+  width: 40%;
+  left: 1%;
+  top: 1%;
+}
+
+.menu-btn{
+  margin: 0 15%;
+  height: 34%; 
+  width: 30%;
+  background-color: transparent;
+  background-image:url('../images/MENU.png');
+  background-size: 100%;
+  background-repeat:no-repeat;
+  border:none;
+  cursor: pointer;
+}
+.menu-btn:hover{
+  background-image:url('../images/MENU_on.png') 
+}
+
+#menu-btn-list{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-left: 5%;
+  flex-direction: column;
+  justify-content: flex-start;
+  display: none;
+  transform: rotate(0.98turn);
+}
+
+.menu-list1{
+  width: 80%;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 100%;
+}
+
+.menu-list2{
+  width: 80%;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 5px
+}
+
+.menu-list3{
+  width: 80%;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 5px
+}
+
+.menu-list1:hover{
+  background: #000;
+  text-decoration: none;
+  color: white;
+}
+.menu-list2:hover{
+  background: #000;
+  text-decoration: none;
+  color: white;
+}
+.menu-list3:hover{
+  background: #000;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-logo{
+  height: 5%;
+  width: 20%;
+  background-color: transparent;
+  background-image:url('../images/logo-black.png');
+  background-repeat:no-repeat;
+  background-size: 90%;
+  border:none;
+  position: absolute; 
+  left: 75%;
+  top: 1.5%;
+}
+
+#wibro{
+  height: 10%;
+  width: 9%;
+  background-color: transparent;
+  background-image:url('../images/ARROW.png');
+  left: 78%;
+  top: 22%;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+.btn-con{
+  height: 3%; 
+  width: 15%;
+  background-color: transparent;
+  background-repeat:no-repeat;
+  border:none;
+  position: absolute; 
+  left: 59%;
+  top: 33.5%;
+  background-image:url('../images/konkurs.png');
+  background-size: 90%;
+}
+
+.btn-con:hover{
+  background-image:url('../images/konkurs_on.png');
+}
+
+#btn-photo{
+  height: 8%;
+  width: 18%;
+  background-color: transparent;
+  background-image:url('../images/add_photo.png');
+  background-repeat:no-repeat;
+  background-size: 100%;
+  border:none;
+  position: absolute; 
+  left: 66%;
+  top: 72%;
+  cursor: pointer;
+}
+
+#btn-photo:hover{
+  background-image:url('../images/add_photo_on.png');
+}
+
+.display-block2 {
+  width: 50%;
+  left: 27%;
+  top: 15%;
+}
+
+.media{
+    position: absolute;
+    left: 29%;
+    top: 86%;
+    display: flex;
+    width: 45%;
+    height: 5%;
+    transform: rotate(0.98turn);
+}
+
+.btn-vk{
+  height: 90px; 
+  width: 90px;
+  background-color: transparent;
+  background-image:url('../images/BK.png');
+  background-size: 90%;
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+}
+.btn-fb{
+  height: 90px; 
+  width: 90px;
+  background-color: transparent;
+  background-image:url('../images/Fb.png');
+  background-size: 90%;
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+}
+.btn-ok{
+  height: 90px; 
+  width: 90px;
+  background-color: transparent;
+  background-image:url('../images/O.png');
+  background-size: 90%;
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+}
+.btn-wp{
+  height: 90px; 
+  width: 90px;
+  background-color: transparent;
+  background-image:url('../images/Whatsapp.png');
+  background-size: 90%;  
+  background-repeat:no-repeat;
+  border:none;
+  line-height:50px;
+}
+
+.btn-vk:hover{
+  background-image:url('../images/BK_on.png');
+}
+.btn-fb:hover{
+  background-image:url('../images/Fb_on.png');  
+}
+.btn-ok:hover{
+  background-image:url('../images/O_on.png'); 
+}
+.btn-wp:hover{
+  background-image:url('../images/Whatsapp_on.png'); 
+}
+
+.btn-submit{
+  position: absolute; 
+  left: 32%;
+  top: 79%;
+  height: 7%;
+  width: 35%;
+  background-color: transparent;
+  background-image:url('../images/TELL.png');
+  background-repeat:no-repeat;
+  background-size: 100%;
+  border:none;
+  line-height:50px;
+}
+
+.btn-submit:hover {
+  background-image:url('../images/TELL_ON.png');
+}
+
+/* ---------------------------------------------- */
+/* 
+.form{
+  position: relative;
+} */
+
+.txt1 {
+  left: 18%;
+  top: 0;
+}
+
+.txt {
+  position: absolute; 
+  left: 18%;
+  top: 6%;
+  font-size: 100%;
+  width: 62%;
+  z-index: 10;
+}
+
+#foto-txt{
+ display: none;
+}
+
+#span-plus {
+ display: none;
+}
+
+#div-txt {
+  left: 22%;
+  top: 96%;
+}
+
+.name1 {
+  left: 18%;
+  top: 20%;
+}
+.name {
+  left: 18%;
+  top: 26%;
+  width: 62%;
+  height: 5%;
+}
+.email1 {
+  left: 18%;
+  top: 34%;
+}
+.email {
+  left: 18%;
+  top: 40%;
+  width: 62%;
+  height: 5%;
+}
+
+.invalid-feedback{
+  position: absolute; 
+  left: 18%;
+  top: 49%;
+  font-size: 1rem;
+  width: 32%;
+}
+
+
+.label {
+  font-size: 120%;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.positionA .form-control:focus:not(.is-invalid) {
+  border: 2px solid #fbd77c;
+  box-shadow: inset 0 1px 1px rgba(251,215,124,0.075), 0 0 18px rgba(251,215,124,0.6);
+}
+
+.positionA .form-control:focus .is-invalid{
+  border: 2px solid red;
+  box-shadow: inset 0 1px 1px rgba(251,215,124,0.075), 0 0 18px rgba(251,215,124,0.6);
+}
+
+/* ============================================== */
+
+.btn-read{
+  height: 25px;
+  /* width: 45%;
+  background-size: 100%; */
+}
+.btn-hide{
+  height: 25px;
+  /* width: 45%;
+  background-size: 100%; */
+
+}
+
+#posts{
+  width: 90%;
+  margin: auto;
+}
+.post{
+  display: flex;
+  background:#FFFFFF;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  font-size: 70%;
+}
+
+.photo{
+  margin: auto;
+  padding-left: 20px;
+  flex-basis: 20%;
+}
+
+.photo > img{
+  width: 100%;
+  overflow: hidden;
+}
+
+.photo > img:hover {
+  cursor: zoom-in;
+}
+
+.full-name > h2 {
+  font-size: 120%;
+}
+
+.post-body{
+  margin-left: 20px;
+  flex-basis: 80%;
+  padding-right: 20px;
+}
+
+.post-text{
+  height: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+
+}
+
+@media (min-width: 360px) and (max-width: 485px) {
+  .wrap {
+    background-image: url("");
+    min-height: 100%;
+  }
+  #menu-btn-list{
+    width: 180%;
+  }
+
+  .txt1 {
+    top: 0;
+  }
+  .txt {
+    top: 8%;
+  }
+
+  #div-txt {
+    font-size: 70%
+  }
+
+  .name1 {
+    top: 28%;
+  }
+  .name {
+    top: 37%;
+  }
+
+  .email1 {
+    top: 42%;
+  }
   .email {
-    top: 285px;
+    top: 50%;
   }
-
   .invalid-feedback{
-    top:325px;
-    left: 42%;
+  left: 10%;
+  top: 54%;
+  width: 72%;
+   font-size: 70%;
   }
 
-  #span-plus{
-    left: 68%;
+  .menu-list1{
+  font-size: 70%;
+   width: 50%;
   }
 
-  #btn-photo{
-    left: 20%;
-    top: 71%;
-    background-size: 90%;
+  .menu-list2{
+    font-size: 70%;
+     width: 50%;
   }
-  .media{
-    left: 15%;
-    top: 84%;
-    background-size: 90%;
-  }
-  .div-sub{
-    left: 50%;
-    top: 72%;
-    background-size: 90%;
+
+  .menu-list3{
+    font-size: 70%;
+     width: 50%;
   }
 }

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=1200">
+    <!-- <meta name="viewport" content="width=1200"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel="shortcut icon" href="favicon.png" type="image/png">
     <title>Бухгалтерия</title>
 
@@ -9,11 +10,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.css">
     <link href="./styles/index.css" rel="stylesheet">
-    <!-- <link href="./styles/media.css" rel="stylesheet"> -->
-    <!-- <link href="./styles/media1.css" rel="stylesheet">
-    <link href="./styles/media2.css" rel="stylesheet">
-    <link href="./styles/media3.css" rel="stylesheet"> -->
-    <!-- <link href="./styles/media4.css" rel="stylesheet"> -->
+    <link href="./styles/media.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
@@ -37,7 +34,7 @@
                 id="txt1"
                 class="form-control txt frm-ctrl" 
                 name="txt" 
-                cols="100" rows="3" 
+                cols="100" rows="2" 
                 placeholder="Смелее" 
                 required></textarea>
                 <p id="foto-txt">Добавить фотографию</p>
@@ -52,9 +49,9 @@
                 <input onkeypress="cleanError()" required id="email1" class="form-control email frm-ctrl" type="text" placeholder="name@example.com">
                 <div id ="error" class="invalid-feedback frm-ctrl">Не все  поля заполнены.</div>
             </form>
-            <div class="div-sub">
+            <!-- <div class="div-sub">
                 <button id="sub" class="btn btn-submit" onclick="validForm()"></button>
-            </div>
+            </div> -->
         </div>
         <div class="media">
             <a class="btn-vk" target="_blank" href="https://share.yandex.net/go.xml?service=vkontakte&url=http://story.1gl.ru/&title=Однажды в бухгалтерии"></a>
@@ -63,7 +60,7 @@
             <a class="btn-wp" target="_blank" href="https://web.whatsapp.com/send?text=http://story.1gl.ru"></a>
         </div>
         <label id="btn-photo" for="file"></label>
-        <button id="sub2" class="btn btn-submit" onclick="validForm()"></button>
+        <button id="sub" class="btn-submit" onclick="validForm()"></button>
         <a class="btn-sistem" target="_blank" href="https://www.1gl.ru/"></a>
         <div id="wibro"></div>
         <a class="btn-logo" target="_blank" href="https://www.1gl.ru/?utm_source=story_1gl_ru&utm_medium=refer&utm_campaign=story_refer#/customer/demo"></a>
