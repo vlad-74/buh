@@ -357,7 +357,7 @@ function validForm() {
 
 function visibleMenu(){
 	if (!menuVisible) {
-		document.getElementById("menu-btn-list").style.display = "block";
+		document.getElementById("menu-btn-list").style.display = "flex";
 		menuVisible = true;
 	} else {
 		document.getElementById("menu-btn-list").style.display = "none";
@@ -376,6 +376,30 @@ function cleanError(){
 		}
 	}
 }
+
+(function () {
+	var delay = 90
+		i = 0,
+		startTimer = function (pixels) {
+
+			var elem = document.getElementById('wibro'),
+				bottom = elem.offsetTop;
+
+			if ((pixels > 0 && bottom > 450) || (pixels < 0 && bottom < 430)) {
+				clearInterval(timer);
+				timer = setInterval(function () {
+					startTimer(pixels * -1);
+				}, delay);
+			}
+			elem.style.top = bottom + pixels + 'px';
+			i++;
+		};
+
+	var timer = setInterval(function () {
+		startTimer(20);
+	}, delay);
+
+})();
 
 
 document.addEventListener('DOMContentLoaded', function () { // Аналог $(document).ready(function(){
