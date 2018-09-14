@@ -58,8 +58,8 @@ function changeText(e,id) {
 		document.getElementById(id).setAttribute("class", "");
 		document.getElementById(id).style.minHeight = "50px";
 	} else {
-			e.target.className = "btn btn-read";
-			document.getElementById(id).setAttribute("class", "post-text");
+		e.target.className = "btn btn-read";
+		document.getElementById(id).setAttribute("class", "post-text");
 	}
 }
 
@@ -378,22 +378,33 @@ function cleanError(){
 }
 
 (function () {
+	var upDown = function(up, down, pixels) {
+		var elem = document.getElementById('wibro'),
+			bottom = elem.offsetTop;
+
+		if ((pixels > 0 && bottom > up) || (pixels < 0 && bottom < down)) {
+		clearInterval(timer);
+		timer = setInterval(function() {
+			startTimer(pixels * -1);
+		}, delay);
+		}
+		elem.style.top = bottom + pixels + "px";
+		i++;
+    };
+
 	var delay = 90
 		i = 0,
-		startTimer = function (pixels) {
 
-			var elem = document.getElementById('wibro'),
-				bottom = elem.offsetTop;
+	startTimer = function (pixels) {
 
-			if ((pixels > 0 && bottom > 450) || (pixels < 0 && bottom < 430)) {
-				clearInterval(timer);
-				timer = setInterval(function () {
-					startTimer(pixels * -1);
-				}, delay);
-			}
-			elem.style.top = bottom + pixels + 'px';
-			i++;
-		};
+		if(window.outerHeight === 1024){
+			upDown(300, 280, pixels);
+		} else if (window.outerHeight < 650) {
+			upDown(230, 210, pixels);
+		} else {
+			upDown(450, 430, pixels);
+		}
+	};
 
 	var timer = setInterval(function () {
 		startTimer(20);

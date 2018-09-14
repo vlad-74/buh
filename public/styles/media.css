@@ -12,6 +12,10 @@
   #foto-txt, #span-plus{
     display: none;
   }
+
+  #div-txt {
+    font-size: 80%;
+  }
 }
 
 @media (min-width: 760px) and (max-width: 874px) {
@@ -42,7 +46,7 @@
 }
 
 
-@media (min-width: 360px) and (max-width: 759px) {
+@media (min-width: 300px) and (max-width: 759px) {
   .wrap {
     background-image: url("");
     min-height: 100%;
@@ -362,16 +366,16 @@
 
 /* ============================================== */
 
-.btn-read{
-  height: 25px;
-  /* width: 45%;
-  background-size: 100%; */
-}
-.btn-hide{
-  height: 25px;
-  /* width: 45%;
-  background-size: 100%; */
 
+.btn-read{
+  width: 30%;
+  height: 20px;
+}
+
+
+.btn-hide{
+  width: 30%;
+  height: 20px;
 }
 
 #posts{
@@ -421,7 +425,7 @@
 
 }
 
-@media (min-width: 360px) and (max-width: 485px) {
+@media (min-width: 300px) and (max-width: 485px) {
   .wrap {
     background-image: url("");
     min-height: 100%;
@@ -435,6 +439,7 @@
   }
   .txt {
     top: 8%;
+    font-size: 70%;
   }
 
   #div-txt {
@@ -446,6 +451,7 @@
   }
   .name {
     top: 37%;
+    font-size: 70%;
   }
 
   .email1 {
@@ -453,6 +459,7 @@
   }
   .email {
     top: 50%;
+    font-size: 70%;
   }
   .invalid-feedback{
   left: 10%;

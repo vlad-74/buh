@@ -422,17 +422,19 @@
   background-color: transparent;
   background-image:url('../images/read.png');
   background-repeat:no-repeat;
+  background-size: 100%;
   border:none;
   line-height:50px;
 }
 .btn-hide{
-    height: 30px; 
-    width: 177px;
-    background-color: transparent;
-    background-image:url('../images/hide.png');
-    background-repeat:no-repeat;
-    border:none;
-    line-height:50px;
+  height: 30px; 
+  width: 177px;
+  background-color: transparent;
+  background-image:url('../images/hide.png');
+  background-repeat:no-repeat;
+  background-size: 100%;
+  border:none;
+  line-height:50px;
 }
 
 .display-block {
