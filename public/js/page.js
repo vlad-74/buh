@@ -48,7 +48,7 @@ var txt = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' +
 var resize;
 
 var posts = [
-	{ id: 1, img: './images/88.jpg', fio: 'Иванов Иван Иванович', txt: '111 ' + txt},
+	{ id: 1, img: '', fio: 'Иванов Иван Иванович', txt: '111 '},
 	{ id: 2, img: './images/77.jpg', fio: 'Петров Петр Петрович', txt: '222 ' + txt } 
 ];
 

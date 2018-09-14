@@ -369,13 +369,13 @@
 
 .btn-read{
   width: 30%;
-  height: 20px;
+  height: 40%;
 }
 
 
 .btn-hide{
   width: 30%;
-  height: 20px;
+  height: 40%;
 }
 
 #posts{
@@ -416,12 +416,18 @@
 }
 
 .post-text{
-  height: 180px;
+  min-height: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
-  
 }
 
+.full-name {
+    margin-bottom: 2px;
+}
+
+.btn {
+  margin: 2px;
+}
 
 }
 
