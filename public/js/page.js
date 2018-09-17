@@ -67,33 +67,34 @@ function readURL(input) {
 	return (window.URL ? URL : webkitURL).createObjectURL(input.files[0]);
 }
 
-
-function getFoto() {
-	var name1 = document.getElementById("file");
-	if (Math.round(name1.files.item(0).size / 1024 / 1024) <= 5) {
-		getMeta(readURL(name1));
-	} else {
-		$("#myModal").modal("show");
-	}
-};
-
 function attachmentFoto(){
 	var name = document.getElementById("file");
 	fotoPath = name.value;
-	document.getElementById("span-plus").style.display = "none";
+	// document.getElementById("span-plus").style.display = "none";
+	document.getElementById("span-plus").style.left = "72%";
 	document.getElementById("btn-photo").style.pointerEvents = "none";
 	document.getElementById("btn-photo").style.opacity = ".3";
 	document.getElementById("foto-txt").innerHTML = 'Будет отправлена фотография';
 	document.getElementById("div-txt").innerHTML = name.files.item(0).name + " (" + Math.round(name.files.item(0).size / 1024) + "КБ) " || "N/A";
+	var result = document.getElementById("result");
 }
 
 function canselFoto(){
 	$("#resizer-demo")[0].src = "";
 	$("#file")[0].value = "";
 
+	croppieContainer();
+	document.getElementById("result").src = '../images/avatar.png';
+
+	document.getElementById("foto-txt").innerHTML = "Добавить фотографию";
+	document.getElementById("div-txt").innerHTML = "Ограничения: Тип jpg и Размер не более 5 МБ"; 
+	document.getElementById("span-plus").style.left = "66%";
+}
+
+function croppieContainer(){
 	$("div.croppie-container").remove();
 	$("div#result-wrap").remove();
-	
+
 	var d1 = document.createElement("div");
 	d1.id = "image-body";
 	document.getElementById("image-wrap").appendChild(d1);
@@ -109,10 +110,6 @@ function canselFoto(){
 	var m2 = document.createElement("img");
 	m2.id = "result";
 	document.getElementById("result-wrap").appendChild(m2);
-
-	document.getElementById("result").src = '../images/avatar.png';
-	
-
 }
 
 function output(node) {
@@ -134,6 +131,20 @@ function fixBinary(bin) {
 	}
 	return buf;
 }
+
+function getFoto() {
+	var name1 = document.getElementById("file");
+	if (Math.round(name1.files.item(0).size / 1024 / 1024) <= 5) {
+		if (document.getElementById("span-plus").style.left !== "72%") {
+			getMeta(readURL(name1));
+		}else{
+			croppieContainer();
+			getMeta(readURL(name1));
+		}
+	} else {
+		$("#myModal").modal("show");
+	}
+};
 
 function getMeta(varA, varB) {
 	if (typeof varB !== 'undefined') {
