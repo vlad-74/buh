@@ -77,6 +77,10 @@ function attachmentFoto(){
 	document.getElementById("foto-txt").innerHTML = 'Будет отправлена фотография';
 	document.getElementById("div-txt").innerHTML = name.files.item(0).name + " (" + Math.round(name.files.item(0).size / 1024) + "КБ) " || "N/A";
 	var result = document.getElementById("result");
+	
+	console.log("result", result);	
+	$("#resizer-demo")[0].src = "";
+	$("#file")[0].value = "";
 }
 
 function canselFoto(){
@@ -137,7 +141,7 @@ function getFoto() {
 	if (Math.round(name1.files.item(0).size / 1024 / 1024) <= 5) {
 		if (document.getElementById("span-plus").style.left !== "72%") {
 			getMeta(readURL(name1));
-		}else{
+		}else{	
 			croppieContainer();
 			getMeta(readURL(name1));
 		}

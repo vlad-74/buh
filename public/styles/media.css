@@ -57,7 +57,7 @@
 @media (min-width: 300px) and (max-width: 759px) {
   .wrap {
     background-image: url("");
-    min-height: 100%;
+    height: auto;
   }
 
   .media-css{
@@ -67,7 +67,8 @@
   .mob{
     display: block;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
+    height: 120%;
   }
 
   #result-wrap {
